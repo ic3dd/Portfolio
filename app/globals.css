@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #fafafa;
+    --bg-surface: #ffffff;
+    --border: #e5e7eb;
+    --text-primary: #111827;
+    --text-muted: #6b7280;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+  }
+
+  .dark {
+    --bg-primary: #0f172a;
+    --bg-surface: #1e293b;
+    --border: #334155;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  /* Transições suaves em inputs e botões */
+  input, textarea, button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  /* Subilinha animada no hover (nav e links) */
+  .link-underline-hover {
+    @apply relative no-underline;
+  }
+  .link-underline-hover::after {
+    content: "";
+    @apply absolute left-0 bottom-0 h-0.5 w-0 bg-accent transition-all duration-300;
+  }
+  .link-underline-hover:hover::after {
+    @apply w-full;
+  }
+
+  /* Card interativo: lift + sombra no hover */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  .dark .card-hover:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+  }
+
+  /* Pill com hover (skills, certs) */
+  .pill-hover {
+    @apply transition-all duration-200;
+  }
+  .pill-hover:hover {
+    @apply scale-105 border-accent;
+    background-color: color-mix(in srgb, var(--accent) 12%, var(--bg-primary));
+  }
+}
