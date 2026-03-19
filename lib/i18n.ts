@@ -159,9 +159,10 @@ export const translations: Record<Language, Dict> = {
     "projects.subtitle": "Alguns dos projetos em que trabalhei.",
     "projects.item1.title": "Plataforma Escolar Damião de Goes",
     "projects.item1.desc":
-      "Plataforma web académica com foco em organização de conteúdos e experiência do utilizador para contexto escolar.",
+      "Website institucional e académico com navegação simples, estrutura clara de conteúdos e foco em acessibilidade para alunos, docentes e comunidade escolar.",
     "projects.item2.title": "AulaBot",
-    "projects.item2.desc": "Projeto web com foco em apoio ao estudo e automação de tarefas educativas.",
+    "projects.item2.desc":
+      "Plataforma digital orientada ao apoio ao estudo, com experiência de utilização intuitiva e funcionalidades pensadas para melhorar a produtividade em contexto educativo.",
     "projects.noImage": "Projeto",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
@@ -265,9 +266,10 @@ export const translations: Record<Language, Dict> = {
     "projects.subtitle": "A few projects I’ve worked on.",
     "projects.item1.title": "Damião de Goes School Platform",
     "projects.item1.desc":
-      "Academic web platform focused on content organization and user experience for a school context.",
+      "Institutional and academic website with clear information architecture, straightforward navigation, and accessibility-oriented UX for students, teachers, and the school community.",
     "projects.item2.title": "AulaBot",
-    "projects.item2.desc": "Web project focused on study support and automation of educational tasks.",
+    "projects.item2.desc":
+      "Digital platform focused on study support, with an intuitive user experience and features designed to improve productivity in educational workflows.",
     "projects.noImage": "Project",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
