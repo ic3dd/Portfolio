@@ -90,13 +90,16 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
             >
               <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
                 {project.cover_image_url ? (
-                  <Image
-                    src={project.cover_image_url}
-                    alt={project.title}
-                    fill
-                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  <>
+                    <Image
+                      src={project.cover_image_url}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.04]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                  </>
                 ) : (
                   <div className="flex h-full flex-col items-center justify-center gap-2 font-body text-text-muted">
                     <svg className="h-12 w-12 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
