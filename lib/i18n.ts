@@ -152,11 +152,11 @@ export const translations: Record<Language, Dict> = {
 
     "projects.title": "Projetos",
     "projects.subtitle": "Alguns dos projetos em que trabalhei.",
-    "projects.item1.title": "Chatbot Inteligente",
+    "projects.item1.title": "Plataforma Escolar Damião de Goes",
     "projects.item1.desc":
-      "Sistema de chat com controlo de segurança via IP e autenticação de utilizadores. Integração de APIs, gestão de bases de dados e interface web.",
-    "projects.item2.title": "Projeto em desenvolvimento",
-    "projects.item2.desc": "Novos projetos de desenvolvimento de software em PHP, SQL e tecnologias web.",
+      "Plataforma web académica com foco em organização de conteúdos e experiência do utilizador para contexto escolar.",
+    "projects.item2.title": "AulaBot",
+    "projects.item2.desc": "Projeto web com foco em apoio ao estudo e automação de tarefas educativas.",
     "projects.noImage": "Projeto",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
@@ -253,11 +253,11 @@ export const translations: Record<Language, Dict> = {
 
     "projects.title": "Projects",
     "projects.subtitle": "A few projects I’ve worked on.",
-    "projects.item1.title": "Intelligent Chatbot",
+    "projects.item1.title": "Damião de Goes School Platform",
     "projects.item1.desc":
-      "Chat system with IP-based security controls and user authentication. API integration, database management, and web UI.",
-    "projects.item2.title": "Project in progress",
-    "projects.item2.desc": "New software projects in PHP, SQL, and web technologies.",
+      "Academic web platform focused on content organization and user experience for a school context.",
+    "projects.item2.title": "AulaBot",
+    "projects.item2.desc": "Web project focused on study support and automation of educational tasks.",
     "projects.noImage": "Project",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
