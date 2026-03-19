@@ -64,6 +64,7 @@ export type TranslationKey =
   | "projects.live"
   | "projects.visit"
   | "projects.featured"
+  | "projects.previewUnavailable"
   | "certs.title"
   | "certs.subtitle"
   | "testimonial.title"
@@ -168,6 +169,7 @@ export const translations: Record<Language, Dict> = {
     "projects.live": "Live Demo",
     "projects.visit": "Visitar site",
     "projects.featured": "Destaque",
+    "projects.previewUnavailable": "Preview indisponivel",
 
     "certs.title": "Certificações",
     "certs.subtitle": "Formações complementares e idiomas.",
@@ -275,6 +277,7 @@ export const translations: Record<Language, Dict> = {
     "projects.live": "Live Demo",
     "projects.visit": "Visit website",
     "projects.featured": "Featured",
+    "projects.previewUnavailable": "Preview unavailable",
 
     "certs.title": "Certifications",
     "certs.subtitle": "Extra training and language level.",

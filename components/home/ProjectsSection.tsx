@@ -12,7 +12,7 @@ const placeholderProjects: Project[] = [
     slug: "plataforma-escolar-damiao-de-goes",
     description:
       "Plataforma web académica com foco em organização de conteúdos e experiência do utilizador para contexto escolar.",
-    cover_image_url: "https://image.thum.io/get/width/1200/https://aluno19355.damiaodegoes.pt/",
+    cover_image_url: null,
     technologies: ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
     github_url: null,
     live_url: "https://aluno19355.damiaodegoes.pt/",
@@ -27,7 +27,7 @@ const placeholderProjects: Project[] = [
     title: "AulaBot",
     slug: "aulabot",
     description: "Projeto web com foco em apoio ao estudo e automação de tarefas educativas.",
-    cover_image_url: "https://image.thum.io/get/width/1200/https://aulabot.hstn.me/",
+    cover_image_url: null,
     technologies: ["HTML5", "CSS3", "JavaScript", "UX Writing"],
     github_url: null,
     live_url: "https://aulabot.hstn.me/",
@@ -97,11 +97,19 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
-                  <div className="flex h-full flex-col items-center justify-center gap-2 font-body text-text-muted">
-                    <svg className="h-12 w-12 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                    </svg>
-                    <span className="text-xs">{t("projects.noImage")}</span>
+                  <div className="relative flex h-full flex-col justify-between bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-4 text-slate-100">
+                    <div className="flex items-center gap-1.5 opacity-80">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
+                    </div>
+                    <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+                      <p className="text-[11px] uppercase tracking-wide text-slate-300">{t("projects.noImage")}</p>
+                      <p className="mt-1 truncate text-sm font-semibold">
+                        {project.live_url ? new URL(project.live_url).hostname : mappedTitle}
+                      </p>
+                    </div>
+                    <div className="text-xs text-slate-300/80">{t("projects.previewUnavailable")}</div>
                   </div>
                 )}
               </div>
