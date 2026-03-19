@@ -88,13 +88,13 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
               transition={{ duration: 0.4, delay: 0.05 * i }}
               className="card-hover group overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
             >
-              <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-border to-primary/50">
+              <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
                 {project.cover_image_url ? (
                   <Image
                     src={project.cover_image_url}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 ) : (
