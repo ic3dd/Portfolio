@@ -28,7 +28,6 @@ export function TestimonialSection() {
           <p className="font-body text-lg leading-relaxed text-text-muted italic">
             &ldquo;{t("testimonial.quote")}&rdquo;
           </p>
-          <footer className="mt-4 font-body text-sm text-text-muted">{t("testimonial.author")}</footer>
         </motion.blockquote>
       </div>
     </section>

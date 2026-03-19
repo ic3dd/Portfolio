@@ -66,7 +66,7 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
           {t("projects.subtitle")}
         </motion.p>
 
-        <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
           {list.map((project, i) => {
             const isPlaceholder = !projects || projects.length === 0;
             const mappedTitle =
@@ -106,7 +106,14 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
                 )}
               </div>
               <div className="p-4">
-                <h3 className="font-heading font-semibold text-primary">{mappedTitle}</h3>
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-heading font-semibold text-primary">{mappedTitle}</h3>
+                  {project.featured && (
+                    <span className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[11px] font-semibold text-accent">
+                      {t("projects.featured")}
+                    </span>
+                  )}
+                </div>
                 <p className="mt-1 font-body text-sm text-text-muted line-clamp-2">
                   {mappedDesc || "—"}
                 </p>
@@ -136,9 +143,9 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
                       href={project.live_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-accent hover:underline"
+                      className="inline-flex items-center rounded-lg border border-accent/30 bg-accent/10 px-3 py-1.5 text-sm font-semibold text-accent no-underline transition-colors hover:bg-accent hover:text-white"
                     >
-                      {t("projects.live")}
+                      {t("projects.visit")}
                     </a>
                   )}
                 </div>

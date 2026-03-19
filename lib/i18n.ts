@@ -62,6 +62,8 @@ export type TranslationKey =
   | "projects.noImage"
   | "projects.github"
   | "projects.live"
+  | "projects.visit"
+  | "projects.featured"
   | "certs.title"
   | "certs.subtitle"
   | "testimonial.title"
@@ -72,6 +74,9 @@ export type TranslationKey =
   | "contact.form.name"
   | "contact.form.email"
   | "contact.form.message"
+  | "contact.form.namePlaceholder"
+  | "contact.form.emailPlaceholder"
+  | "contact.form.messagePlaceholder"
   | "contact.form.send"
   | "contact.form.sending"
   | "contact.form.sent"
@@ -160,6 +165,8 @@ export const translations: Record<Language, Dict> = {
     "projects.noImage": "Projeto",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
+    "projects.visit": "Visitar site",
+    "projects.featured": "Destaque",
 
     "certs.title": "Certificações",
     "certs.subtitle": "Formações complementares e idiomas.",
@@ -175,6 +182,9 @@ export const translations: Record<Language, Dict> = {
     "contact.form.name": "Nome",
     "contact.form.email": "E-mail",
     "contact.form.message": "Mensagem",
+    "contact.form.namePlaceholder": "O teu nome",
+    "contact.form.emailPlaceholder": "teu@email.com",
+    "contact.form.messagePlaceholder": "Escreve a tua mensagem...",
     "contact.form.send": "Enviar mensagem",
     "contact.form.sending": "Enviando...",
     "contact.form.sent": "Enviado!",
@@ -261,6 +271,8 @@ export const translations: Record<Language, Dict> = {
     "projects.noImage": "Project",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
+    "projects.visit": "Visit website",
+    "projects.featured": "Featured",
 
     "certs.title": "Certifications",
     "certs.subtitle": "Extra training and language level.",
@@ -276,6 +288,9 @@ export const translations: Record<Language, Dict> = {
     "contact.form.name": "Name",
     "contact.form.email": "Email",
     "contact.form.message": "Message",
+    "contact.form.namePlaceholder": "Your name",
+    "contact.form.emailPlaceholder": "your@email.com",
+    "contact.form.messagePlaceholder": "Write your message...",
     "contact.form.send": "Send message",
     "contact.form.sending": "Sending...",
     "contact.form.sent": "Sent!",

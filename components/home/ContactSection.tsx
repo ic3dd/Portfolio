@@ -56,7 +56,7 @@ export function ContactSection() {
                   type="text"
                   required
                   className="mt-1 block w-full rounded-xl border-2 border-border bg-primary px-3 py-2.5 font-body text-primary placeholder-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                  placeholder="Seu nome"
+                  placeholder={t("contact.form.namePlaceholder")}
                 />
               </div>
               <div>
@@ -69,7 +69,7 @@ export function ContactSection() {
                   type="email"
                   required
                   className="mt-1 block w-full rounded-xl border-2 border-border bg-primary px-3 py-2.5 font-body text-primary placeholder-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                  placeholder="seu@email.com"
+                  placeholder={t("contact.form.emailPlaceholder")}
                 />
               </div>
               <div>
@@ -82,7 +82,7 @@ export function ContactSection() {
                   rows={4}
                   required
                   className="mt-1 block w-full rounded-xl border-2 border-border bg-primary px-3 py-2.5 font-body text-primary placeholder-text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
-                  placeholder="Sua mensagem..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                 />
               </div>
               <motion.button
@@ -126,23 +126,6 @@ export function ContactSection() {
               className="link-underline-hover inline-flex items-center gap-2 font-medium text-accent"
             >
               <span className="text-lg">✉️</span> santiagoesteves35@gmail.com
-            </a>
-            <p className="mt-6 font-body text-text-muted">{t("contact.networks")}</p>
-            <a
-              href="https://linkedin.com/in/santiagoesteves"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline-hover inline-flex items-center gap-2 font-medium text-accent"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/santiagoesteves"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline-hover inline-flex items-center gap-2 font-medium text-accent"
-            >
-              GitHub
             </a>
           </motion.div>
         </div>
