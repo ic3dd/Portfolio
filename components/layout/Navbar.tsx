@@ -11,7 +11,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 const navLinks = [
   { href: "#porque-eu", key: "nav.why" as const },
   { href: "#sobre", key: "nav.about" as const },
-  { href: "#projetos", key: "nav.projects" as const },
+  { href: "#projetos", key: "nav.portfolio" as const },
   { href: "#formacao", key: "nav.education" as const },
   { href: "#certificacoes", key: "nav.certs" as const },
   { href: "#contato", key: "nav.contact" as const },

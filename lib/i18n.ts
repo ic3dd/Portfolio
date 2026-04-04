@@ -3,7 +3,7 @@ export type Language = "pt" | "en";
 export type TranslationKey =
   | "nav.why"
   | "nav.about"
-  | "nav.projects"
+  | "nav.portfolio"
   | "nav.education"
   | "nav.certs"
   | "nav.contact"
@@ -54,11 +54,25 @@ export type TranslationKey =
   | "experience.item2.period"
   | "experience.item2.desc"
   | "projects.title"
-  | "projects.subtitle"
+  | "projects.intro"
   | "projects.item1.title"
   | "projects.item1.desc"
+  | "projects.item1.badge"
+  | "projects.item1.f1"
+  | "projects.item1.f2"
+  | "projects.item1.f3"
+  | "projects.item1.f4"
+  | "projects.item1.f5"
   | "projects.item2.title"
   | "projects.item2.desc"
+  | "projects.item2.badge"
+  | "projects.item2.f1"
+  | "projects.item2.f2"
+  | "projects.item2.f3"
+  | "projects.item2.f4"
+  | "projects.item2.f5"
+  | "projects.stack"
+  | "projects.features"
   | "projects.noImage"
   | "projects.github"
   | "projects.live"
@@ -93,7 +107,7 @@ export const translations: Record<Language, Dict> = {
   pt: {
     "nav.why": "Porquê eu?",
     "nav.about": "Sobre",
-    "nav.projects": "Projetos",
+    "nav.portfolio": "Portfólio",
     "nav.education": "Formação",
     "nav.certs": "Certificações",
     "nav.contact": "Contato",
@@ -156,18 +170,33 @@ export const translations: Record<Language, Dict> = {
     "experience.item2.desc":
       "Chatbot Inteligente e outros projetos com PHP, SQL, integração de APIs e gestão de bases de dados. Foco em segurança (controlo por IP, autenticação) e experiência de utilizador.",
 
-    "projects.title": "Projetos",
-    "projects.subtitle": "Alguns dos projetos em que trabalhei.",
-    "projects.item1.title": "Plataforma Escolar Damião de Goes",
+    "projects.title": "Portfólio",
+    "projects.intro":
+      "Aqui estão exemplos de sites que desenvolvi para negócios locais — rápidos, claros e pensados para telemóvel.",
+    "projects.item1.title": "Sabor da Vila — Restaurante local",
     "projects.item1.desc":
-      "Website institucional e académico com navegação simples, estrutura clara de conteúdos e foco em acessibilidade para alunos, docentes e comunidade escolar.",
-    "projects.item2.title": "AulaBot",
+      "Landing page completa para um restaurante: história da casa, destaques do menu, prova social e contacto com mapa. Pensada para converter visitas em reservas e pedidos de orçamento.",
+    "projects.item1.badge": "Projeto de demonstração",
+    "projects.item1.f1": "Layout responsivo, com foco em quem pesquisa no telemóvel",
+    "projects.item1.f2": "Secções tipo menu e benefícios com hierarquia visual clara",
+    "projects.item1.f3": "Formulário de pedido de orçamento e dados de contacto visíveis",
+    "projects.item1.f4": "HTML semântico e boas práticas de acessibilidade (rótulos, foco)",
+    "projects.item1.f5": "Site estático leve, rápido a carregar e fácil de alojar",
+    "projects.item2.title": "Studio Elegance — Salão de beleza",
     "projects.item2.desc":
-      "Plataforma digital orientada ao apoio ao estudo, com experiência de utilização intuitiva e funcionalidades pensadas para melhorar a produtividade em contexto educativo.",
+      "Presença online elegante para um salão: serviços em destaque, galeria, depoimentos de estilo e formulário para pedir orçamento — a imagem de marca forte desde o primeiro ecrã.",
+    "projects.item2.badge": "Conceito para negócio local",
+    "projects.item2.f1": "Interface moderna, tipografia e cores alinhadas com marca premium",
+    "projects.item2.f2": "Cards de serviços, galeria e blocos de prova social",
+    "projects.item2.f3": "Formulário de contacto e fluxo para pedido de orçamento",
+    "projects.item2.f4": "Navegação simples, skip link e cuidado com acessibilidade",
+    "projects.item2.f5": "Stack front-end clássica (HTML, CSS, JS) pronta para GitHub Pages",
+    "projects.stack": "Stack tecnológica",
+    "projects.features": "Destaques",
     "projects.noImage": "Projeto",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
-    "projects.visit": "Visitar site",
+    "projects.visit": "Ver site ao vivo",
     "projects.featured": "Destaque",
     "projects.previewUnavailable": "Preview indisponivel",
 
@@ -201,7 +230,7 @@ export const translations: Record<Language, Dict> = {
   en: {
     "nav.why": "Why me?",
     "nav.about": "About",
-    "nav.projects": "Projects",
+    "nav.portfolio": "Portfolio",
     "nav.education": "Education",
     "nav.certs": "Certifications",
     "nav.contact": "Contact",
@@ -264,18 +293,33 @@ export const translations: Record<Language, Dict> = {
     "experience.item2.desc":
       "Chatbot Intelligent and other projects using PHP, SQL, API integrations, and database management. Focus on security (IP control, authentication) and user experience.",
 
-    "projects.title": "Projects",
-    "projects.subtitle": "A few projects I’ve worked on.",
-    "projects.item1.title": "Damião de Goes School Platform",
+    "projects.title": "Portfolio",
+    "projects.intro":
+      "Here are some example websites I built for local businesses — fast, clear, and mobile-first.",
+    "projects.item1.title": "Sabor da Vila — Local restaurant website",
     "projects.item1.desc":
-      "Institutional and academic website with clear information architecture, straightforward navigation, and accessibility-oriented UX for students, teachers, and the school community.",
-    "projects.item2.title": "AulaBot",
+      "A full landing page for a restaurant: brand story, menu highlights, social proof, and contact with map. Built to turn visits into reservations and quote requests.",
+    "projects.item1.badge": "Demo project",
+    "projects.item1.f1": "Responsive layout for guests searching on their phones",
+    "projects.item1.f2": "Menu-style sections and benefit blocks with clear hierarchy",
+    "projects.item1.f3": "Quote request form and prominent contact details",
+    "projects.item1.f4": "Semantic HTML and accessibility basics (labels, focus, structure)",
+    "projects.item1.f5": "Light static site for fast loads and simple hosting",
+    "projects.item2.title": "Studio Elegance — Beauty salon website",
     "projects.item2.desc":
-      "Digital platform focused on study support, with an intuitive user experience and features designed to improve productivity in educational workflows.",
+      "An elegant online presence for a salon: featured services, gallery, testimonial-style proof, and a budget request form — strong brand feel from the first screen.",
+    "projects.item2.badge": "Concept for a local business",
+    "projects.item2.f1": "Polished UI with typography and color suited to a premium local brand",
+    "projects.item2.f2": "Service cards, gallery, and social-proof sections",
+    "projects.item2.f3": "Contact form and streamlined quote request flow",
+    "projects.item2.f4": "Simple navigation, skip link, and accessibility-minded markup",
+    "projects.item2.f5": "Classic HTML, CSS, and JavaScript — easy to deploy statically",
+    "projects.stack": "Tech stack",
+    "projects.features": "Key features",
     "projects.noImage": "Project",
     "projects.github": "GitHub",
     "projects.live": "Live Demo",
-    "projects.visit": "Visit website",
+    "projects.visit": "View live site",
     "projects.featured": "Featured",
     "projects.previewUnavailable": "Preview unavailable",
 
