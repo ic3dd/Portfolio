@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { cn } from "@/lib/utils";
@@ -22,12 +21,7 @@ export function Navbar() {
   const { t } = useLanguage();
 
   return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4 }}
-      className="sticky top-0 z-50 border-b border-border bg-primary/80 backdrop-blur-md"
-    >
+    <header className="sticky top-0 z-50 border-b border-border bg-primary/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -36,7 +30,6 @@ export function Navbar() {
           Santiago Esteves
         </Link>
 
-        {/* Desktop */}
         <div className="hidden items-center md:flex">
           <Link
             href="#contato"
@@ -57,11 +50,10 @@ export function Navbar() {
           <ThemeToggle />
         </div>
 
-        {/* Mobile menu button */}
         <div className="flex items-center gap-2 md:hidden">
           <LanguageToggle />
           <ThemeToggle />
-          <motion.button
+          <button
             type="button"
             aria-label="Abrir menu"
             aria-expanded={open}
@@ -75,46 +67,37 @@ export function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
-          </motion.button>
+          </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="border-t border-border bg-primary md:hidden"
-          >
-            <div className="flex flex-col gap-1 px-4 py-3">
-              <Link
-                href="#contato"
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "rounded-lg bg-accent px-3 py-2.5 text-center text-sm font-semibold text-white no-underline transition-colors hover:bg-accent-hover"
-                )}
-              >
-                {t("nav.available")}
-              </Link>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-surface hover:text-primary"
-                  )}
-                >
-                  {t(link.key)}
-                </Link>
-              ))}
-            </div>
-          </motion.div>
+      <div
+        className={cn(
+          "overflow-hidden border-border bg-primary transition-[max-height,opacity] duration-200 ease-out md:hidden",
+          open ? "max-h-[28rem] border-t opacity-100" : "max-h-0 border-t-0 opacity-0"
         )}
-      </AnimatePresence>
-    </motion.header>
+        aria-hidden={!open}
+      >
+        <div className="flex flex-col gap-1 px-4 py-3">
+          <Link
+            href="#contato"
+            onClick={() => setOpen(false)}
+            className="rounded-lg bg-accent px-3 py-2.5 text-center text-sm font-semibold text-white no-underline transition-colors hover:bg-accent-hover"
+          >
+            {t("nav.available")}
+          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-2 text-sm font-medium text-text-muted transition-colors hover:bg-surface hover:text-primary"
+            >
+              {t(link.key)}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </header>
   );
 }

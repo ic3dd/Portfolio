@@ -52,24 +52,71 @@
     @apply w-full;
   }
 
-  /* Card interativo: lift + sombra no hover */
+  /* Card: só sombra no hover (evita repaints pesados com translate) */
   .card-hover {
-    @apply transition-all duration-300;
+    @apply transition-shadow duration-200;
   }
   .card-hover:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    box-shadow: 0 12px 24px -8px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.08);
   }
   .dark .card-hover:hover {
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.2);
+    box-shadow: 0 12px 24px -8px rgb(0 0 0 / 0.35), 0 4px 8px -4px rgb(0 0 0 / 0.25);
   }
 
-  /* Pill com hover (skills, certs) */
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .hero-anim {
+    animation: hero-fade-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-anim-d1 {
+    animation-delay: 0.06s;
+  }
+  .hero-anim-d2 {
+    animation-delay: 0.11s;
+  }
+  .hero-anim-d3 {
+    animation-delay: 0.16s;
+  }
+  .hero-anim-d4 {
+    animation-delay: 0.21s;
+  }
+  .hero-anim-d5 {
+    animation-delay: 0.28s;
+  }
+  .hero-anim-d6 {
+    animation-delay: 0.34s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-anim,
+    .hero-anim-d1,
+    .hero-anim-d2,
+    .hero-anim-d3,
+    .hero-anim-d4,
+    .hero-anim-d5,
+    .hero-anim-d6 {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* Pill com hover (skills, certs) — sem scale para menos repaints */
   .pill-hover {
-    @apply transition-all duration-200;
+    @apply transition-colors duration-150;
   }
   .pill-hover:hover {
-    @apply scale-105 border-accent;
+    @apply border-accent;
     background-color: color-mix(in srgb, var(--accent) 12%, var(--bg-primary));
   }
 }

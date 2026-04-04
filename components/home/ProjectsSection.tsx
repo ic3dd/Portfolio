@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { TranslationKey } from "@/lib/i18n";
 import type { Project } from "@/types";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -90,7 +89,7 @@ const DEMO_BADGE_KEYS: Partial<Record<PlaceholderId, TranslationKey>> = {
   demo2: "projects.demo2.badge",
 };
 
-const FEATURE_KEYS: Record<PlaceholderId, TranslationKey[]> = {
+const FEATURE_KEYS: Partial<Record<PlaceholderId, TranslationKey[]>> = {
   main1: [
     "projects.main1.f1",
     "projects.main1.f2",
@@ -104,20 +103,6 @@ const FEATURE_KEYS: Record<PlaceholderId, TranslationKey[]> = {
     "projects.main2.f3",
     "projects.main2.f4",
     "projects.main2.f5",
-  ],
-  demo1: [
-    "projects.demo1.f1",
-    "projects.demo1.f2",
-    "projects.demo1.f3",
-    "projects.demo1.f4",
-    "projects.demo1.f5",
-  ],
-  demo2: [
-    "projects.demo2.f1",
-    "projects.demo2.f2",
-    "projects.demo2.f3",
-    "projects.demo2.f4",
-    "projects.demo2.f5",
   ],
 };
 
@@ -151,7 +136,7 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
   const list = projects && projects.length > 0 ? projects : placeholderProjects;
   const isPlaceholder = !projects || projects.length === 0;
 
-  function renderCard(project: Project, animationIndex: number) {
+  function renderCard(project: Project) {
     const pid = project.id;
     const mappedTitle =
       isPlaceholder && isPlaceholderId(pid) ? t(TITLE_KEYS[pid]) : project.title;
@@ -162,16 +147,11 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
         ? t(DEMO_BADGE_KEYS[pid]!)
         : null;
     const mainBadge = isPlaceholder && isPlaceholderId(pid) && (pid === "main1" || pid === "main2");
-    const featureKeys =
-      isPlaceholder && isPlaceholderId(pid) ? FEATURE_KEYS[pid] : undefined;
+    const featureKeys = isPlaceholder && isPlaceholderId(pid) ? FEATURE_KEYS[pid] : undefined;
 
     return (
-      <motion.li
+      <li
         key={project.id}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: 0.05 * animationIndex }}
         className="card-hover group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
       >
         <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
@@ -181,7 +161,7 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
                 src={project.cover_image_url}
                 alt={mappedTitle}
                 fill
-                className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.04]"
+                className="object-cover object-top transition-opacity duration-200 group-hover:opacity-95"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
@@ -281,33 +261,15 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
             )}
           </div>
         </div>
-      </motion.li>
+      </li>
     );
   }
-
-  let animationIndex = 0;
 
   return (
     <section id="projetos" className="scroll-mt-20 border-t border-border px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
       <div className="mx-auto max-w-6xl">
-        <motion.h2
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="font-heading text-2xl font-bold text-primary sm:text-3xl"
-        >
-          {t("projects.title")}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="mt-2 max-w-3xl font-body text-text-muted"
-        >
-          {t("projects.intro")}
-        </motion.p>
+        <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">{t("projects.title")}</h2>
+        <p className="mt-2 max-w-3xl font-body text-text-muted">{t("projects.intro")}</p>
 
         {isPlaceholder ? (
           <div className="mt-10 space-y-14">
@@ -318,20 +280,11 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
 
               return (
                 <div key={section.heading}>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.35 }}
-                    className="font-heading text-lg font-semibold text-primary sm:text-xl"
-                  >
+                  <h3 className="font-heading text-lg font-semibold text-primary sm:text-xl">
                     {t(section.heading)}
-                  </motion.h3>
+                  </h3>
                   <ul className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2">
-                    {sectionProjects.map((project) => {
-                      const idx = animationIndex++;
-                      return renderCard(project, idx);
-                    })}
+                    {sectionProjects.map((project) => renderCard(project))}
                   </ul>
                 </div>
               );
@@ -339,7 +292,7 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
           </div>
         ) : (
           <ul className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {list.map((project, i) => renderCard(project, i))}
+            {list.map((project) => renderCard(project))}
           </ul>
         )}
       </div>
