@@ -55,22 +55,39 @@ export type TranslationKey =
   | "experience.item2.desc"
   | "projects.title"
   | "projects.intro"
-  | "projects.item1.title"
-  | "projects.item1.desc"
-  | "projects.item1.badge"
-  | "projects.item1.f1"
-  | "projects.item1.f2"
-  | "projects.item1.f3"
-  | "projects.item1.f4"
-  | "projects.item1.f5"
-  | "projects.item2.title"
-  | "projects.item2.desc"
-  | "projects.item2.badge"
-  | "projects.item2.f1"
-  | "projects.item2.f2"
-  | "projects.item2.f3"
-  | "projects.item2.f4"
-  | "projects.item2.f5"
+  | "projects.mainHeading"
+  | "projects.demoHeading"
+  | "projects.mainBadge"
+  | "projects.main1.title"
+  | "projects.main1.desc"
+  | "projects.main1.f1"
+  | "projects.main1.f2"
+  | "projects.main1.f3"
+  | "projects.main1.f4"
+  | "projects.main1.f5"
+  | "projects.main2.title"
+  | "projects.main2.desc"
+  | "projects.main2.f1"
+  | "projects.main2.f2"
+  | "projects.main2.f3"
+  | "projects.main2.f4"
+  | "projects.main2.f5"
+  | "projects.demo1.title"
+  | "projects.demo1.desc"
+  | "projects.demo1.badge"
+  | "projects.demo1.f1"
+  | "projects.demo1.f2"
+  | "projects.demo1.f3"
+  | "projects.demo1.f4"
+  | "projects.demo1.f5"
+  | "projects.demo2.title"
+  | "projects.demo2.desc"
+  | "projects.demo2.badge"
+  | "projects.demo2.f1"
+  | "projects.demo2.f2"
+  | "projects.demo2.f3"
+  | "projects.demo2.f4"
+  | "projects.demo2.f5"
   | "projects.stack"
   | "projects.features"
   | "projects.noImage"
@@ -172,25 +189,44 @@ export const translations: Record<Language, Dict> = {
 
     "projects.title": "Portfólio",
     "projects.intro":
-      "Aqui estão exemplos de sites que desenvolvi para negócios locais — rápidos, claros e pensados para telemóvel.",
-    "projects.item1.title": "Sabor da Vila — Restaurante local",
-    "projects.item1.desc":
-      "Landing page completa para um restaurante: história da casa, destaques do menu, prova social e contacto com mapa. Pensada para converter visitas em reservas e pedidos de orçamento.",
-    "projects.item1.badge": "Projeto de demonstração",
-    "projects.item1.f1": "Layout responsivo, com foco em quem pesquisa no telemóvel",
-    "projects.item1.f2": "Secções tipo menu e benefícios com hierarquia visual clara",
-    "projects.item1.f3": "Formulário de pedido de orçamento e dados de contacto visíveis",
-    "projects.item1.f4": "HTML semântico e boas práticas de acessibilidade (rótulos, foco)",
-    "projects.item1.f5": "Site estático leve, rápido a carregar e fácil de alojar",
-    "projects.item2.title": "Studio Elegance — Salão de beleza",
-    "projects.item2.desc":
-      "Presença online elegante para um salão: serviços em destaque, galeria, depoimentos de estilo e formulário para pedir orçamento — a imagem de marca forte desde o primeiro ecrã.",
-    "projects.item2.badge": "Conceito para negócio local",
-    "projects.item2.f1": "Interface moderna, tipografia e cores alinhadas com marca premium",
-    "projects.item2.f2": "Cards de serviços, galeria e blocos de prova social",
-    "projects.item2.f3": "Formulário de contacto e fluxo para pedido de orçamento",
-    "projects.item2.f4": "Navegação simples, skip link e cuidado com acessibilidade",
-    "projects.item2.f5": "Stack front-end clássica (HTML, CSS, JS) pronta para GitHub Pages",
+      "Os projetos principais são aplicações web completas com backend e dados. Os exemplos seguintes são landing pages estáticas — o tipo de presença online rápida que também posso criar para negócios locais.",
+    "projects.mainHeading": "Projetos principais",
+    "projects.demoHeading": "Exemplos de landing pages",
+    "projects.mainBadge": "Projeto principal",
+    "projects.main1.title": "GoBar — Plataforma escolar",
+    "projects.main1.desc":
+      "Plataforma digital para o bar escolar: fluxos no servidor, persistência em base de dados e interface para utilizadores — projeto completo, não só páginas estáticas.",
+    "projects.main1.f1": "Backend com lógica de negócio e integração com dados (SQL)",
+    "projects.main1.f2": "Áreas e permissões adequadas ao contexto escolar",
+    "projects.main1.f3": "Front-end responsivo focado em rapidez e clareza no dia a dia",
+    "projects.main1.f4": "Modelo de aplicação web real, pronta para evoluir com novas funcionalidades",
+    "projects.main1.f5": "Demonstra trabalho full stack além de HTML/CSS isolado",
+    "projects.main2.title": "AulaBot — Assistente de estudo",
+    "projects.main2.desc":
+      "Plataforma com backend, APIs e camadas de segurança (controlo de acesso), pensada para apoiar estudo e interação — arquitetura de produto, não só conteúdo estático.",
+    "projects.main2.f1": "Integração com APIs e serviços externos",
+    "projects.main2.f2": "Segurança aplicada (autenticação, restrições de acesso)",
+    "projects.main2.f3": "Persistência e gestão de dados no servidor",
+    "projects.main2.f4": "Experiência web orientada a alunos e fluxos educativos",
+    "projects.main2.f5": "Funcionalidades dinâmicas e estado gerido no backend",
+    "projects.demo1.title": "Sabor da Vila — Restaurante local",
+    "projects.demo1.desc":
+      "Landing page de conceito para um restaurante: história, menu em destaque, prova social e contacto com mapa — mostra o tipo de site vitrine que consigo entregar.",
+    "projects.demo1.badge": "Exemplo estático (HTML/CSS/JS)",
+    "projects.demo1.f1": "Layout responsivo para quem pesquisa no telemóvel",
+    "projects.demo1.f2": "Secções tipo menu e benefícios com hierarquia clara",
+    "projects.demo1.f3": "Formulário de pedido de orçamento e contactos visíveis",
+    "projects.demo1.f4": "HTML semântico e bases de acessibilidade",
+    "projects.demo1.f5": "Site estático leve, ideal para alojamento simples",
+    "projects.demo2.title": "Studio Elegance — Salão de beleza",
+    "projects.demo2.desc":
+      "Landing de conceito para um salão: serviços, galeria, prova social e formulário — demonstra marca forte e conversão sem necessidade de backend.",
+    "projects.demo2.badge": "Exemplo estático (HTML/CSS/JS)",
+    "projects.demo2.f1": "Interface moderna, tipografia e cor alinhadas à marca",
+    "projects.demo2.f2": "Cards de serviços, galeria e blocos de confiança",
+    "projects.demo2.f3": "Formulário de contacto e pedido de orçamento",
+    "projects.demo2.f4": "Navegação simples e cuidado com acessibilidade",
+    "projects.demo2.f5": "Stack front-end clássica, pronta para GitHub Pages",
     "projects.stack": "Stack tecnológica",
     "projects.features": "Destaques",
     "projects.noImage": "Projeto",
@@ -295,25 +331,44 @@ export const translations: Record<Language, Dict> = {
 
     "projects.title": "Portfolio",
     "projects.intro":
-      "Here are some example websites I built for local businesses — fast, clear, and mobile-first.",
-    "projects.item1.title": "Sabor da Vila — Local restaurant website",
-    "projects.item1.desc":
-      "A full landing page for a restaurant: brand story, menu highlights, social proof, and contact with map. Built to turn visits into reservations and quote requests.",
-    "projects.item1.badge": "Demo project",
-    "projects.item1.f1": "Responsive layout for guests searching on their phones",
-    "projects.item1.f2": "Menu-style sections and benefit blocks with clear hierarchy",
-    "projects.item1.f3": "Quote request form and prominent contact details",
-    "projects.item1.f4": "Semantic HTML and accessibility basics (labels, focus, structure)",
-    "projects.item1.f5": "Light static site for fast loads and simple hosting",
-    "projects.item2.title": "Studio Elegance — Beauty salon website",
-    "projects.item2.desc":
-      "An elegant online presence for a salon: featured services, gallery, testimonial-style proof, and a budget request form — strong brand feel from the first screen.",
-    "projects.item2.badge": "Concept for a local business",
-    "projects.item2.f1": "Polished UI with typography and color suited to a premium local brand",
-    "projects.item2.f2": "Service cards, gallery, and social-proof sections",
-    "projects.item2.f3": "Contact form and streamlined quote request flow",
-    "projects.item2.f4": "Simple navigation, skip link, and accessibility-minded markup",
-    "projects.item2.f5": "Classic HTML, CSS, and JavaScript — easy to deploy statically",
+      "My main projects are full web applications with a backend and real data. The examples below are static landing pages — the kind of fast, clear local-business presence I can deliver too.",
+    "projects.mainHeading": "Main projects",
+    "projects.demoHeading": "Landing page examples",
+    "projects.mainBadge": "Main project",
+    "projects.main1.title": "GoBar — School platform",
+    "projects.main1.desc":
+      "A digital platform for the school bar: server-side flows, database persistence, and a user-facing interface — a complete application, not just static pages.",
+    "projects.main1.f1": "Backend business logic and SQL-backed data",
+    "projects.main1.f2": "Permissions and areas suited to a school context",
+    "projects.main1.f3": "Responsive front-end focused on speed and clarity",
+    "projects.main1.f4": "A real web-app baseline that can grow with new features",
+    "projects.main1.f5": "Shows full-stack work beyond standalone HTML/CSS",
+    "projects.main2.title": "AulaBot — Study assistant",
+    "projects.main2.desc":
+      "A platform with backend, APIs, and security layers (access control) built to support study workflows — product-style architecture, not static content only.",
+    "projects.main2.f1": "Integration with external APIs and services",
+    "projects.main2.f2": "Security-minded access control and authentication",
+    "projects.main2.f3": "Server-side persistence and data management",
+    "projects.main2.f4": "Web UX oriented to students and learning flows",
+    "projects.main2.f5": "Dynamic behavior with state handled on the backend",
+    "projects.demo1.title": "Sabor da Vila — Local restaurant website",
+    "projects.demo1.desc":
+      "A concept landing page for a restaurant: story, menu highlights, social proof, and a map — illustrates the brochure-style site I can ship.",
+    "projects.demo1.badge": "Static example (HTML/CSS/JS)",
+    "projects.demo1.f1": "Responsive layout for mobile-first visitors",
+    "projects.demo1.f2": "Menu-style sections with clear visual hierarchy",
+    "projects.demo1.f3": "Quote request form and visible contact paths",
+    "projects.demo1.f4": "Semantic HTML and accessibility basics",
+    "projects.demo1.f5": "Light static site, easy to host anywhere",
+    "projects.demo2.title": "Studio Elegance — Beauty salon website",
+    "projects.demo2.desc":
+      "A concept landing page for a salon: services, gallery, trust blocks, and forms — strong branding without requiring a backend.",
+    "projects.demo2.badge": "Static example (HTML/CSS/JS)",
+    "projects.demo2.f1": "Polished UI, typography, and color for a premium feel",
+    "projects.demo2.f2": "Service cards, gallery, and social-proof sections",
+    "projects.demo2.f3": "Contact and quote-request flows in-page",
+    "projects.demo2.f4": "Simple navigation, skip link, accessibility-aware markup",
+    "projects.demo2.f5": "Classic front-end stack, GitHub Pages–friendly",
     "projects.stack": "Tech stack",
     "projects.features": "Key features",
     "projects.noImage": "Project",
