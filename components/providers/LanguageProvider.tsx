@@ -33,14 +33,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const initial = getInitialLanguage();
     setMounted(true);
-    setLangState(getInitialLanguage());
+    setLangState(initial);
+    document.documentElement.lang = initial === "en" ? "en" : "pt-BR";
   }, []);
 
   const setLang = useCallback((newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem("lang", newLang);
-    document.documentElement.lang = newLang === "en" ? "en" : "pt";
+    document.documentElement.lang = newLang === "en" ? "en" : "pt-BR";
   }, []);
 
   const toggleLang = useCallback(() => {

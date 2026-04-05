@@ -13,6 +13,7 @@ export function TestimonialSection() {
           <p className="font-body text-lg italic leading-relaxed text-text-muted">
             &ldquo;{t("testimonial.quote")}&rdquo;
           </p>
+          <footer className="mt-4 font-body text-sm not-italic text-text-muted">{t("testimonial.author")}</footer>
         </blockquote>
       </div>
     </section>

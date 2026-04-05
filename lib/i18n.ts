@@ -104,6 +104,8 @@ export type TranslationKey =
   | "contact.form.sent"
   | "contact.form.success"
   | "contact.form.error"
+  | "contact.form.errorConfig"
+  | "contact.form.errorSend"
   | "contact.direct"
   | "contact.networks"
   | "footer.availability";
@@ -236,6 +238,9 @@ export const translations: Record<Language, Dict> = {
     "contact.form.sent": "Enviado!",
     "contact.form.success": "Mensagem enviada. Em breve retorno!",
     "contact.form.error": "Erro ao enviar. Tente de novo.",
+    "contact.form.errorConfig":
+      "O envio pelo formulário não está configurado neste servidor. Usa o email ou o telefone ao lado.",
+    "contact.form.errorSend": "O serviço de email falhou. Tenta mais tarde ou contacta-me diretamente.",
     "contact.direct": "Contacte-me diretamente:",
     "contact.networks": "Redes (atualiza quando tiveres):",
 
@@ -366,6 +371,9 @@ export const translations: Record<Language, Dict> = {
     "contact.form.sent": "Sent!",
     "contact.form.success": "Message sent. I’ll get back to you soon!",
     "contact.form.error": "Couldn’t send. Please try again.",
+    "contact.form.errorConfig":
+      "Form delivery isn’t configured on this server. Please use the email or phone on the right.",
+    "contact.form.errorSend": "The mail service failed. Try again later or contact me directly.",
     "contact.direct": "Reach me directly:",
     "contact.networks": "Links (update when ready):",
 

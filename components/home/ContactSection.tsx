@@ -6,13 +6,52 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 export function ContactSection() {
   const { t } = useLanguage();
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorKey, setErrorKey] = useState<"generic" | "config" | "send">("generic");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("success");
+    setErrorKey("generic");
+
+    const fd = new FormData(form);
+    const name = String(fd.get("name") ?? "").trim();
+    const email = String(fd.get("email") ?? "").trim();
+    const message = String(fd.get("message") ?? "").trim();
+    const botcheck = String(fd.get("botcheck") ?? "").trim();
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message, botcheck }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+        return;
+      }
+
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (res.status === 503 || data.error === "not_configured") {
+        setErrorKey("config");
+      } else if (res.status === 502 || data.error === "provider") {
+        setErrorKey("send");
+      }
+      setStatus("error");
+    } catch {
+      setErrorKey("generic");
+      setStatus("error");
+    }
   }
+
+  const errorMessage =
+    errorKey === "config"
+      ? t("contact.form.errorConfig")
+      : errorKey === "send"
+        ? t("contact.form.errorSend")
+        : t("contact.form.error");
 
   return (
     <section id="contato" className="scroll-mt-20 border-t border-border bg-surface px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
@@ -22,7 +61,15 @@ export function ContactSection() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-2">
           <div>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="relative space-y-4">
+              <input
+                type="text"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                className="absolute -left-[9999px] h-0 w-0 opacity-0"
+              />
               <div>
                 <label htmlFor="name" className="block font-body text-sm font-medium text-primary">
                   {t("contact.form.name")}
@@ -76,9 +123,7 @@ export function ContactSection() {
               {status === "success" && (
                 <p className="text-sm text-green-600 dark:text-green-400">{t("contact.form.success")}</p>
               )}
-              {status === "error" && (
-                <p className="text-sm text-red-600 dark:text-red-400">{t("contact.form.error")}</p>
-              )}
+              {status === "error" && <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>}
             </form>
           </div>
 
