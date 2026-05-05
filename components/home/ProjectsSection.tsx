@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { TranslationKey } from "@/lib/i18n";
 import type { Project } from "@/types";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { withBasePath } from "@/lib/basePath";
 
 type PlaceholderId = "main1" | "main2" | "demo1" | "demo2";
 
@@ -13,7 +14,7 @@ const placeholderProjects: Project[] = [
     title: "GoBar",
     slug: "gobar",
     description: null,
-    cover_image_url: "/images/gobar.png",
+    cover_image_url: withBasePath("/images/gobar.png"),
     technologies: ["PHP", "SQL", "JavaScript", "HTML", "CSS"],
     github_url: null,
     live_url: "https://aluno19355.damiaodegoes.pt/",
@@ -28,7 +29,7 @@ const placeholderProjects: Project[] = [
     title: "AulaBot",
     slug: "aulabot",
     description: null,
-    cover_image_url: "/images/aulabot.png",
+    cover_image_url: withBasePath("/images/aulabot.png"),
     technologies: ["PHP", "SQL", "JavaScript", "APIs", "HTML", "CSS"],
     github_url: null,
     live_url: "https://aulabot.hstn.me/",
@@ -150,16 +151,18 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
       isPlaceholder && isPlaceholderId(pid) && (pid === "main1" || pid === "main2");
     const featureKeys = isPlaceholder && isPlaceholderId(pid) ? FEATURE_KEYS[pid] : undefined;
 
+    const coverSrc = project.cover_image_url ? withBasePath(project.cover_image_url) : null;
+
     return (
       <li
         key={project.id}
         className="card-hover group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
       >
         <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
-          {project.cover_image_url ? (
+          {coverSrc ? (
             <>
               <Image
-                src={project.cover_image_url}
+                src={coverSrc}
                 alt={mappedTitle}
                 fill
                 className="object-cover object-top transition-opacity duration-200 group-hover:opacity-95"
