@@ -33,6 +33,19 @@ Site de portfólio dinâmico com front-end público e painel administrativo (CMS
 4. **Banco de dados**
    - No Supabase, abra o SQL Editor e execute o script em `docs/DATABASE_SCHEMA.md` para criar tabelas e RLS.
 
+## Deploy no GitHub Pages (site estático)
+
+Este projeto está configurado para export estático do Next.js (`output: "export"`).
+
+- **Workflow**: ao fazer push para `master`, o GitHub Actions gera o site e publica no GitHub Pages.
+- **Base path**: em repositórios do tipo `username.github.io` o site sai na raiz; caso contrário, sai em `/<nome-do-repo>/`.
+
+### Variáveis (GitHub)
+
+- **Repo → Settings → Secrets and variables → Actions**
+  - **Variables**: `NEXT_PUBLIC_SITE_URL` (ex.: `https://<user>.github.io/<repo>`)
+  - **Secrets** (opcional, para o formulário): `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
+
 ## Estrutura resumida
 
 - `app/(public)/` — Página inicial e layout público (Navbar, Footer)

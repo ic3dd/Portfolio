@@ -8,6 +8,8 @@ export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorKey, setErrorKey] = useState<"generic" | "config" | "send">("generic");
 
+  const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -21,10 +23,23 @@ export function ContactSection() {
     const botcheck = String(fd.get("botcheck") ?? "").trim();
 
     try {
-      const res = await fetch("/api/contact", {
+      if (!web3Key) {
+        setErrorKey("config");
+        setStatus("error");
+        return;
+      }
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, botcheck }),
+        body: JSON.stringify({
+          access_key: web3Key,
+          subject: `[Portfólio] Mensagem de ${name}`,
+          name,
+          email,
+          message,
+          botcheck,
+        }),
       });
 
       if (res.ok) {
@@ -33,12 +48,7 @@ export function ContactSection() {
         return;
       }
 
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
-      if (res.status === 503 || data.error === "not_configured") {
-        setErrorKey("config");
-      } else if (res.status === 502 || data.error === "provider") {
-        setErrorKey("send");
-      }
+      setErrorKey("send");
       setStatus("error");
     } catch {
       setErrorKey("generic");

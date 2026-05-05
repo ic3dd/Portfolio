@@ -58,13 +58,6 @@ export type TranslationKey =
   | "projects.mainHeading"
   | "projects.demoHeading"
   | "projects.mainBadge"
-  | "projects.main1.title"
-  | "projects.main1.desc"
-  | "projects.main1.f1"
-  | "projects.main1.f2"
-  | "projects.main1.f3"
-  | "projects.main1.f4"
-  | "projects.main1.f5"
   | "projects.main2.title"
   | "projects.main2.desc"
   | "projects.main2.f1"
@@ -185,14 +178,6 @@ export const translations: Record<Language, Dict> = {
     "projects.mainHeading": "Projetos principais",
     "projects.demoHeading": "Exemplos de landing pages",
     "projects.mainBadge": "Projeto principal",
-    "projects.main1.title": "GoBar — Plataforma escolar",
-    "projects.main1.desc":
-      "Plataforma digital para o bar escolar: fluxos no servidor, persistência em base de dados e interface para utilizadores — projeto completo, não só páginas estáticas.",
-    "projects.main1.f1": "Backend com lógica de negócio e integração com dados (SQL)",
-    "projects.main1.f2": "Áreas e permissões adequadas ao contexto escolar",
-    "projects.main1.f3": "Front-end responsivo focado em rapidez e clareza no dia a dia",
-    "projects.main1.f4": "Modelo de aplicação web real, pronta para evoluir com novas funcionalidades",
-    "projects.main1.f5": "Demonstra trabalho full stack além de HTML/CSS isolado",
     "projects.main2.title": "AulaBot — Assistente de estudo",
     "projects.main2.desc":
       "Plataforma com backend, APIs e camadas de segurança (controlo de acesso), pensada para apoiar estudo e interação — arquitetura de produto, não só conteúdo estático.",
@@ -318,14 +303,6 @@ export const translations: Record<Language, Dict> = {
     "projects.mainHeading": "Main projects",
     "projects.demoHeading": "Landing page examples",
     "projects.mainBadge": "Main project",
-    "projects.main1.title": "GoBar — School platform",
-    "projects.main1.desc":
-      "A digital platform for the school bar: server-side flows, database persistence, and a user-facing interface — a complete application, not just static pages.",
-    "projects.main1.f1": "Backend business logic and SQL-backed data",
-    "projects.main1.f2": "Permissions and areas suited to a school context",
-    "projects.main1.f3": "Responsive front-end focused on speed and clarity",
-    "projects.main1.f4": "A real web-app baseline that can grow with new features",
-    "projects.main1.f5": "Shows full-stack work beyond standalone HTML/CSS",
     "projects.main2.title": "AulaBot — Study assistant",
     "projects.main2.desc":
       "A platform with backend, APIs, and security layers (access control) built to support study workflows — product-style architecture, not static content only.",
