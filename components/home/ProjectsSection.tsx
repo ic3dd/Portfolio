@@ -5,9 +5,24 @@ import type { TranslationKey } from "@/lib/i18n";
 import type { Project } from "@/types";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
-type PlaceholderId = "main2" | "demo1" | "demo2";
+type PlaceholderId = "main1" | "main2" | "demo1" | "demo2";
 
 const placeholderProjects: Project[] = [
+  {
+    id: "main1",
+    title: "GoBar",
+    slug: "gobar",
+    description: null,
+    cover_image_url: "/images/gobar.png",
+    technologies: ["PHP", "SQL", "JavaScript", "HTML", "CSS"],
+    github_url: null,
+    live_url: "https://aluno19355.damiaodegoes.pt/",
+    featured: false,
+    sort_order: 0,
+    published: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
   {
     id: "main2",
     title: "AulaBot",
@@ -56,12 +71,14 @@ const placeholderProjects: Project[] = [
 ];
 
 const TITLE_KEYS: Record<PlaceholderId, TranslationKey> = {
+  main1: "projects.main1.title",
   main2: "projects.main2.title",
   demo1: "projects.demo1.title",
   demo2: "projects.demo2.title",
 };
 
 const DESC_KEYS: Record<PlaceholderId, TranslationKey> = {
+  main1: "projects.main1.desc",
   main2: "projects.main2.desc",
   demo1: "projects.demo1.desc",
   demo2: "projects.demo2.desc",
@@ -73,6 +90,13 @@ const DEMO_BADGE_KEYS: Partial<Record<PlaceholderId, TranslationKey>> = {
 };
 
 const FEATURE_KEYS: Partial<Record<PlaceholderId, TranslationKey[]>> = {
+  main1: [
+    "projects.main1.f1",
+    "projects.main1.f2",
+    "projects.main1.f3",
+    "projects.main1.f4",
+    "projects.main1.f5",
+  ],
   main2: [
     "projects.main2.f1",
     "projects.main2.f2",
@@ -83,12 +107,12 @@ const FEATURE_KEYS: Partial<Record<PlaceholderId, TranslationKey[]>> = {
 };
 
 const PLACEHOLDER_SECTIONS: { heading: TranslationKey; ids: PlaceholderId[] }[] = [
-  { heading: "projects.mainHeading", ids: ["main2"] },
+  { heading: "projects.mainHeading", ids: ["main1", "main2"] },
   { heading: "projects.demoHeading", ids: ["demo1", "demo2"] },
 ];
 
 function isPlaceholderId(id: string): id is PlaceholderId {
-  return id === "main2" || id === "demo1" || id === "demo2";
+  return id === "main1" || id === "main2" || id === "demo1" || id === "demo2";
 }
 
 function CheckIcon({ className }: { className?: string }) {
@@ -122,7 +146,8 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
       isPlaceholder && isPlaceholderId(pid) && DEMO_BADGE_KEYS[pid]
         ? t(DEMO_BADGE_KEYS[pid]!)
         : null;
-    const mainBadge = isPlaceholder && isPlaceholderId(pid) && pid === "main2";
+    const mainBadge =
+      isPlaceholder && isPlaceholderId(pid) && (pid === "main1" || pid === "main2");
     const featureKeys = isPlaceholder && isPlaceholderId(pid) ? FEATURE_KEYS[pid] : undefined;
 
     return (
