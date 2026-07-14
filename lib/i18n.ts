@@ -10,6 +10,7 @@ export type TranslationKey =
   | "nav.available"
   | "hero.badgeErasmus"
   | "hero.badgeEnglish"
+  | "hero.badgeTgpsi"
   | "hero.hello"
   | "hero.role"
   | "hero.pitch"
@@ -58,6 +59,7 @@ export type TranslationKey =
   | "projects.mainHeading"
   | "projects.demoHeading"
   | "projects.mainBadge"
+  | "projects.papBadge"
   | "projects.main1.title"
   | "projects.main1.desc"
   | "projects.main1.f1"
@@ -124,6 +126,7 @@ export const translations: Record<Language, Dict> = {
 
     "hero.badgeErasmus": "Erasmus+ 2026",
     "hero.badgeEnglish": "Inglês C1",
+    "hero.badgeTgpsi": "TGPSI concluído · Média 18",
     "hero.hello": "Olá, eu sou",
     "hero.role": "Programador Júnior",
     "hero.pitch": "À procura de estágio ou primeira oportunidade em desenvolvimento web e cibersegurança.",
@@ -138,17 +141,18 @@ export const translations: Record<Language, Dict> = {
       "Estágio de 300h na Croácia em 2026. Desempenho técnico e capacidade de adaptação reconhecidos pela escola.",
     "why.item2.title": "Inglês C1",
     "why.item2.desc": "Fluente em inglês. Preparado para equipas internacionais e documentação em inglês.",
-    "why.item3.title": "Projetos com impacto",
-    "why.item3.desc": "Chatbot com segurança (IP, autenticação), APIs e bases de dados. Não só teoria — código real.",
+    "why.item3.title": "PAP com 20 valores",
+    "why.item3.desc":
+      "Projeto de Aptidão Profissional (GoBar): sistema de reservas escolares com backend, base de dados e interface completa — avaliado com a nota máxima.",
     "why.item4.title": "Comunicação e iniciativa",
     "why.item4.desc":
       "Formador voluntário de IA para encarregados de educação. Facilidade em trabalhar em equipa.",
 
     "about.title": "Sobre mim",
     "about.p1":
-      "Finalista em Gestão e Programação de Sistemas Informáticos, com foco em desenvolvimento web e cibersegurança. Fui selecionado para estágio Erasmus+ na Croácia pelo desempenho técnico.",
+      "Técnico de Gestão e Programação de Sistemas Informáticos (TGPSI), concluído em julho de 2026 com média final de 18 valores. Foco em desenvolvimento web e cibersegurança. Selecionado para estágio Erasmus+ na Croácia pelo desempenho técnico.",
     "about.p2":
-      "Destaco-me por criar projetos práticos (PHP, SQL, APIs) e por trabalhar bem em equipa. Procuro a minha primeira oportunidade profissional para aprender e contribuir desde o primeiro dia.",
+      "Na PAP desenvolvi o GoBar — sistema de reservas escolares em destaque neste portfólio — com avaliação de 20 valores. Procuro a minha primeira oportunidade profissional para aprender e contribuir desde o primeiro dia.",
     "about.skillsTitle": "Principais habilidades",
     "about.langTitle": "Idiomas",
     "about.langPt": "Português — Nativo",
@@ -163,8 +167,9 @@ export const translations: Record<Language, Dict> = {
       "Selecionado para estágio profissional de 300 horas em contexto europeu. Foco em adaptação cultural e prática de Inglês em ambiente técnico.",
     "education.item2.title": "Curso Técnico de Gestão e Programação de Sistemas Informáticos",
     "education.item2.location": "Escola Secundária Damião de Goes",
-    "education.item2.period": "2022 – Presente (12.º Ano)",
-    "education.item2.desc": "Média atual boa com foco em programação, redes e base de dados.",
+    "education.item2.period": "2022 – Jul 2026 (Concluído)",
+    "education.item2.desc":
+      "Curso concluído com média final de 18 valores. Especialização em programação, redes, bases de dados e desenvolvimento de software.",
 
     "experience.title": "Experiência e projetos práticos",
     "experience.subtitle": "Voluntariado e trabalho de desenvolvimento.",
@@ -173,11 +178,11 @@ export const translations: Record<Language, Dict> = {
     "experience.item1.period": "2025",
     "experience.item1.desc":
       "Ministrou sessões de formação sobre Inteligência Artificial para encarregados de educação. Desenvolvimento de capacidades de comunicação e liderança.",
-    "experience.item2.title": "Projetos de Desenvolvimento de Software",
-    "experience.item2.context": "Portefólio",
-    "experience.item2.period": "2023 – Presente",
+    "experience.item2.title": "PAP — GoBar",
+    "experience.item2.context": "Projeto de Aptidão Profissional · 20 valores",
+    "experience.item2.period": "2025 – 2026",
     "experience.item2.desc":
-      "Chatbot Inteligente e outros projetos com PHP, SQL, integração de APIs e gestão de bases de dados. Foco em segurança (controlo por IP, autenticação) e experiência de utilizador.",
+      "Desenvolvimento completo do GoBar, plataforma de reservas escolares: backend em PHP, base de dados SQL, gestão de utilizadores e interface web responsiva. Projeto apresentado e avaliado com a nota máxima.",
 
     "projects.title": "Portfólio",
     "projects.intro":
@@ -185,13 +190,14 @@ export const translations: Record<Language, Dict> = {
     "projects.mainHeading": "Projetos principais",
     "projects.demoHeading": "Exemplos de landing pages",
     "projects.mainBadge": "Projeto principal",
+    "projects.papBadge": "PAP · 20 valores",
     "projects.main1.title": "GoBar — Plataforma escolar",
     "projects.main1.desc":
-      "Plataforma digital para o bar escolar: fluxos no servidor, persistência em base de dados e interface para utilizadores — projeto completo, não só páginas estáticas.",
-    "projects.main1.f1": "Backend com lógica de negócio e integração com dados (SQL)",
-    "projects.main1.f2": "Áreas e permissões adequadas ao contexto escolar",
-    "projects.main1.f3": "Front-end responsivo focado em rapidez e clareza no dia a dia",
-    "projects.main1.f4": "Modelo de aplicação web real, pronta para evoluir com novas funcionalidades",
+      "GoBar — plataforma de reservas escolares e o meu Projeto de Aptidão Profissional, avaliado com 20 valores. Backend, base de dados e interface completa, não só páginas estáticas.",
+    "projects.main1.f1": "Gestão de reservas com lógica de negócio no servidor (PHP + SQL)",
+    "projects.main1.f2": "Perfis e permissões adaptados ao contexto escolar",
+    "projects.main1.f3": "Interface responsiva pensada para alunos e staff no dia a dia",
+    "projects.main1.f4": "Aplicação web real, desenvolvida e defendida como PAP",
     "projects.main1.f5": "Demonstra trabalho full stack além de HTML/CSS isolado",
     "projects.main2.title": "AulaBot — Assistente de estudo",
     "projects.main2.desc":
@@ -244,7 +250,7 @@ export const translations: Record<Language, Dict> = {
     "contact.direct": "Contacte-me diretamente:",
     "contact.networks": "Redes (atualiza quando tiveres):",
 
-    "footer.availability": "Disponível para estágio e primeira oportunidade júnior.",
+    "footer.availability": "TGPSI concluído (média 18). Disponível para estágio e primeira oportunidade júnior.",
   },
   en: {
     "nav.why": "Why me?",
@@ -257,7 +263,8 @@ export const translations: Record<Language, Dict> = {
 
     "hero.badgeErasmus": "Erasmus+ 2026",
     "hero.badgeEnglish": "English C1",
-    "hero.hello": "Hi, I’m",
+    "hero.badgeTgpsi": "TGPSI completed · Grade 18",
+    "hero.hello": "Hi, I'm",
     "hero.role": "Junior Developer",
     "hero.pitch": "Looking for an internship or my first role in web development and cybersecurity.",
     "hero.ctaContact": "Contact me",
@@ -271,17 +278,18 @@ export const translations: Record<Language, Dict> = {
       "300-hour internship in Croatia in 2026. Strong technical performance and adaptability recognized by my school.",
     "why.item2.title": "English C1",
     "why.item2.desc": "Fluent in English. Ready for international teams and English documentation.",
-    "why.item3.title": "Real projects",
-    "why.item3.desc": "Chatbot with security (IP checks, authentication), APIs, and databases. Not just theory—real code.",
+    "why.item3.title": "Final project — top grade",
+    "why.item3.desc":
+      "Professional Aptitude Project (GoBar): school reservation system with backend, database, and full interface — graded 20/20.",
     "why.item4.title": "Communication & initiative",
     "why.item4.desc":
       "Volunteer AI instructor for parents/guardians. Comfortable working in teams and explaining clearly.",
 
     "about.title": "About me",
     "about.p1":
-      "Final-year student in Information Systems Management & Programming, focused on web development and cybersecurity. Selected for an Erasmus+ internship in Croatia due to strong technical performance.",
+      "Information Systems Management & Programming (TGPSI) graduate, completed in July 2026 with a final average of 18/20. Focus on web development and cybersecurity. Selected for an Erasmus+ internship in Croatia due to strong technical performance.",
     "about.p2":
-      "I build practical projects (PHP, SQL, APIs) and work well in teams. I’m looking for my first professional opportunity to learn fast and contribute from day one.",
+      "For my final project I built GoBar — the school reservation system featured in this portfolio — graded 20/20. I'm looking for my first professional opportunity to learn fast and contribute from day one.",
     "about.skillsTitle": "Key skills",
     "about.langTitle": "Languages",
     "about.langPt": "Portuguese — Native",
@@ -296,8 +304,9 @@ export const translations: Record<Language, Dict> = {
       "Selected for a 300-hour professional internship in a European context. Focus on cultural adaptation and technical English practice.",
     "education.item2.title": "Technical Course in Information Systems Management & Programming",
     "education.item2.location": "Escola Secundária Damião de Goes",
-    "education.item2.period": "2022 – Present (12th grade)",
-    "education.item2.desc": "Strong current average with focus on programming, networks, and databases.",
+    "education.item2.period": "2022 – Jul 2026 (Completed)",
+    "education.item2.desc":
+      "Completed with a final average of 18/20. Specialization in programming, networks, databases, and software development.",
 
     "experience.title": "Experience & hands-on projects",
     "experience.subtitle": "Volunteering and development work.",
@@ -306,11 +315,11 @@ export const translations: Record<Language, Dict> = {
     "experience.item1.period": "2025",
     "experience.item1.desc":
       "Delivered AI training sessions for parents/guardians. Strengthened communication and leadership skills.",
-    "experience.item2.title": "Software Development Projects",
-    "experience.item2.context": "Portfolio",
-    "experience.item2.period": "2023 – Present",
+    "experience.item2.title": "Final Project — GoBar",
+    "experience.item2.context": "Professional Aptitude Project · 20/20",
+    "experience.item2.period": "2025 – 2026",
     "experience.item2.desc":
-      "Chatbot Intelligent and other projects using PHP, SQL, API integrations, and database management. Focus on security (IP control, authentication) and user experience.",
+      "End-to-end development of GoBar, a school reservation platform: PHP backend, SQL database, user management, and responsive web interface. Presented and graded with the top mark.",
 
     "projects.title": "Portfolio",
     "projects.intro":
@@ -318,13 +327,14 @@ export const translations: Record<Language, Dict> = {
     "projects.mainHeading": "Main projects",
     "projects.demoHeading": "Landing page examples",
     "projects.mainBadge": "Main project",
+    "projects.papBadge": "Final project · 20/20",
     "projects.main1.title": "GoBar — School platform",
     "projects.main1.desc":
-      "A digital platform for the school bar: server-side flows, database persistence, and a user-facing interface — a complete application, not just static pages.",
-    "projects.main1.f1": "Backend business logic and SQL-backed data",
-    "projects.main1.f2": "Permissions and areas suited to a school context",
-    "projects.main1.f3": "Responsive front-end focused on speed and clarity",
-    "projects.main1.f4": "A real web-app baseline that can grow with new features",
+      "GoBar — school reservation platform and my Professional Aptitude Project, graded 20/20. Full backend, database, and interface, not just static pages.",
+    "projects.main1.f1": "Reservation management with server-side business logic (PHP + SQL)",
+    "projects.main1.f2": "Roles and permissions tailored to a school environment",
+    "projects.main1.f3": "Responsive interface designed for students and staff day to day",
+    "projects.main1.f4": "Real web application developed and defended as my final project",
     "projects.main1.f5": "Shows full-stack work beyond standalone HTML/CSS",
     "projects.main2.title": "AulaBot — Study assistant",
     "projects.main2.desc":
@@ -377,7 +387,7 @@ export const translations: Record<Language, Dict> = {
     "contact.direct": "Reach me directly:",
     "contact.networks": "Links (update when ready):",
 
-    "footer.availability": "Open to an internship and my first junior role.",
+    "footer.availability": "TGPSI completed (average 18). Open to an internship and my first junior role.",
   },
 };
 

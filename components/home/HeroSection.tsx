@@ -20,6 +20,9 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-6xl text-center">
         <div className="hero-anim mb-4 flex flex-wrap items-center justify-center gap-2">
           <span className="rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold text-accent dark:bg-accent/20">
+            {t("hero.badgeTgpsi")}
+          </span>
+          <span className="rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold text-accent dark:bg-accent/20">
             {t("hero.badgeErasmus")}
           </span>
           <span className="rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold text-accent dark:bg-accent/20">

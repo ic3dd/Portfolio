@@ -18,7 +18,7 @@ const placeholderProjects: Project[] = [
     technologies: ["PHP", "SQL", "JavaScript", "HTML", "CSS"],
     github_url: null,
     live_url: "https://aluno19355.damiaodegoes.pt/",
-    featured: false,
+    featured: true,
     sort_order: 0,
     published: true,
     created_at: new Date().toISOString(),
@@ -90,6 +90,10 @@ const DEMO_BADGE_KEYS: Partial<Record<PlaceholderId, TranslationKey>> = {
   demo2: "projects.demo2.badge",
 };
 
+const PAP_BADGE_IDS: Partial<Record<PlaceholderId, true>> = {
+  main1: true,
+};
+
 const FEATURE_KEYS: Partial<Record<PlaceholderId, TranslationKey[]>> = {
   main1: [
     "projects.main1.f1",
@@ -148,7 +152,9 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
         ? t(DEMO_BADGE_KEYS[pid]!)
         : null;
     const mainBadge =
-      isPlaceholder && isPlaceholderId(pid) && (pid === "main1" || pid === "main2");
+      isPlaceholder && isPlaceholderId(pid) && pid === "main2";
+    const papBadge =
+      isPlaceholder && isPlaceholderId(pid) && PAP_BADGE_IDS[pid];
     const featureKeys = isPlaceholder && isPlaceholderId(pid) ? FEATURE_KEYS[pid] : undefined;
 
     const coverSrc = project.cover_image_url ? withBasePath(project.cover_image_url) : null;
@@ -194,6 +200,11 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
           <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
             <h3 className="font-heading text-lg font-semibold leading-snug text-primary">{mappedTitle}</h3>
             <div className="flex flex-wrap items-center gap-2">
+              {papBadge && (
+                <span className="shrink-0 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
+                  {t("projects.papBadge")}
+                </span>
+              )}
               {mainBadge && (
                 <span className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-[11px] font-semibold text-accent">
                   {t("projects.mainBadge")}
