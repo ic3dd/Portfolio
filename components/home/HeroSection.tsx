@@ -7,7 +7,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   const stats = [
-    { value: t("hero.stat1.value"), label: t("hero.stat1.label"), highlight: false },
+    { value: t("hero.stat1.value"), label: t("hero.stat1.label"), highlight: true },
     { value: t("hero.stat2.value"), label: t("hero.stat2.label"), highlight: true },
     { value: t("hero.stat3.value"), label: t("hero.stat3.label"), highlight: false },
   ];

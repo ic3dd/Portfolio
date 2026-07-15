@@ -19,7 +19,7 @@ export function ExperienceSection() {
       context: t("experience.item2.context"),
       period: t("experience.item2.period"),
       description: t("experience.item2.desc"),
-      highlight: false,
+      highlight: true,
     },
   ];
 

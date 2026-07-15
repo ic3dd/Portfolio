@@ -44,13 +44,13 @@ export function AboutSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeader title={t("about.title")} />
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="max-w-3xl font-body text-base leading-relaxed text-text-muted">
             <p className="font-medium text-primary">{t("about.p1")}</p>
             <p className="mt-4">{t("about.p2")}</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
             <div className="rounded-2xl border border-border bg-surface p-4">
               <p className="font-heading text-xs font-semibold uppercase tracking-wider text-text-muted">
                 {t("about.langTitle")}
@@ -66,15 +66,24 @@ export function AboutSection() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
+            <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4 text-center">
               <p className="font-heading text-xs font-semibold uppercase tracking-wider text-accent">
-                {t("about.focusTitle")}
+                {t("about.papLabel")}
               </p>
-              <p className="mt-3 font-body text-sm font-medium leading-relaxed text-primary">
-                {t("about.focusDesc")}
+              <p className="mt-2 font-heading text-3xl font-bold text-accent">20</p>
+              <p className="mt-1 font-body text-xs text-text-muted">{t("about.papNote")}</p>
+            </div>
+            <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4 text-center">
+              <p className="font-heading text-xs font-semibold uppercase tracking-wider text-accent">
+                {t("about.internshipLabel")}
               </p>
+              <p className="mt-2 font-heading text-3xl font-bold text-accent">20</p>
+              <p className="mt-1 font-body text-xs text-text-muted">{t("about.internshipNote")}</p>
             </div>
           </div>
+          <p className="mt-4 rounded-2xl border border-border bg-surface px-4 py-3 font-body text-sm text-text-muted">
+            <span className="font-semibold text-primary">{t("about.focusTitle")}:</span> {t("about.focusDesc")}
+          </p>
         </div>
 
         <div className="mt-10">
