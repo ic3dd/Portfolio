@@ -12,14 +12,14 @@ export function ExperienceSection() {
       context: t("experience.item1.context"),
       period: t("experience.item1.period"),
       description: t("experience.item1.desc"),
-      highlight: false,
+      highlight: true,
     },
     {
       title: t("experience.item2.title"),
       context: t("experience.item2.context"),
       period: t("experience.item2.period"),
       description: t("experience.item2.desc"),
-      highlight: true,
+      highlight: false,
     },
   ];
 
@@ -34,7 +34,7 @@ export function ExperienceSection() {
               key={item.title}
               className={`card-hover rounded-2xl border p-5 sm:p-6 ${
                 item.highlight
-                  ? "border-emerald-500/30 bg-surface"
+                  ? "border-accent/30 bg-surface"
                   : "border-border bg-surface"
               }`}
             >
@@ -42,11 +42,7 @@ export function ExperienceSection() {
                 <h3 className="font-heading font-semibold text-primary">{item.title}</h3>
                 <span className="font-body text-sm text-text-muted">{item.period}</span>
               </div>
-              <p
-                className={`mt-1 font-body text-sm font-medium ${
-                  item.highlight ? "text-emerald-700 dark:text-emerald-400" : "text-accent"
-                }`}
-              >
+              <p className="mt-1 font-body text-sm font-medium text-accent">
                 {item.context}
               </p>
               <p className="mt-3 font-body text-sm leading-relaxed text-text-muted">{item.description}</p>

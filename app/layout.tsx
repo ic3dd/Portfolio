@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Santiago Esteves",
   },
   description:
-    "Portfólio de Santiago Esteves — TGPSI concluído (média 18), PAP GoBar com 20 valores, desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio Erasmus+ e primeira oportunidade júnior.",
+    "Portfólio de Santiago Esteves — TGPSI, software, hardware, redes e Inteligência Artificial. Disponível para estágio e primeira oportunidade júnior.",
   keywords: [
     "Santiago Esteves",
     "programador júnior",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     siteName: "Santiago Esteves",
     title: "Santiago Esteves | Programador Júnior",
     description:
-      "TGPSI concluído (média 18) · PAP GoBar (20) · Desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+      "TGPSI · Software · IA · Hardware. Disponível para estágio e primeira oportunidade júnior.",
     images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Santiago Esteves — Portfólio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Santiago Esteves | Programador Júnior",
     description:
-      "TGPSI concluído (média 18) · PAP GoBar (20) · Desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+      "TGPSI · Software · IA · Hardware. Disponível para estágio e primeira oportunidade júnior.",
     images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },

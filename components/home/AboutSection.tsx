@@ -6,31 +6,33 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 const skillsPT = [
   "PHP",
   "SQL",
+  "JavaScript",
+  "Inteligência Artificial",
+  "Hardware",
   "C#",
   "HTML",
   "CSS",
-  "JavaScript",
   "MySQL",
   "Git",
   "Linux",
-  "Cibersegurança",
   "Redes",
-  "Trabalho em equipa",
+  "Cibersegurança",
 ];
 
 const skillsEN = [
   "PHP",
   "SQL",
+  "JavaScript",
+  "Artificial Intelligence",
+  "Hardware",
   "C#",
   "HTML",
   "CSS",
-  "JavaScript",
   "MySQL",
   "Git",
   "Linux",
-  "Cybersecurity",
   "Networking",
-  "Teamwork",
+  "Cybersecurity",
 ];
 
 export function AboutSection() {
@@ -64,12 +66,13 @@ export function AboutSection() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4">
-              <p className="font-heading text-xs font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                PAP
+            <div className="rounded-2xl border border-accent/30 bg-accent/5 p-4">
+              <p className="font-heading text-xs font-semibold uppercase tracking-wider text-accent">
+                {t("about.focusTitle")}
               </p>
-              <p className="mt-2 font-heading text-3xl font-bold text-emerald-600 dark:text-emerald-400">20</p>
-              <p className="mt-1 font-body text-xs text-text-muted">GoBar</p>
+              <p className="mt-3 font-body text-sm font-medium leading-relaxed text-primary">
+                {t("about.focusDesc")}
+              </p>
             </div>
           </div>
         </div>

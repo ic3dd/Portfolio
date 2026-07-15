@@ -11,6 +11,7 @@ export type TranslationKey =
   | "hero.badgeErasmus"
   | "hero.badgeEnglish"
   | "hero.badgeTgpsi"
+  | "hero.badgeAi"
   | "hero.hello"
   | "hero.role"
   | "hero.pitch"
@@ -36,6 +37,8 @@ export type TranslationKey =
   | "about.title"
   | "about.p1"
   | "about.p2"
+  | "about.focusTitle"
+  | "about.focusDesc"
   | "about.skillsTitle"
   | "about.langTitle"
   | "about.langPt"
@@ -132,17 +135,19 @@ export const translations: Record<Language, Dict> = {
 
     "hero.badgeErasmus": "Erasmus+ 2026",
     "hero.badgeEnglish": "Inglês C1",
-    "hero.badgeTgpsi": "TGPSI concluído · Média 18",
+    "hero.badgeTgpsi": "TGPSI concluído",
+    "hero.badgeAi": "Foco em IA",
     "hero.hello": "Olá, eu sou",
     "hero.role": "Programador Júnior",
-    "hero.pitch": "À procura de estágio ou primeira oportunidade em desenvolvimento web e cibersegurança.",
+    "hero.pitch":
+      "Perfil técnico em informática — hardware, redes e software. Mais direcionado para desenvolvimento e Inteligência Artificial, onde quero ganhar experiência.",
     "hero.ctaContact": "Fala comigo",
     "hero.ctaCv": "Ver CV em PDF",
     "hero.scrollLabel": "O que me destaca",
     "hero.stat1.value": "18",
     "hero.stat1.label": "Média TGPSI",
-    "hero.stat2.value": "20",
-    "hero.stat2.label": "PAP GoBar",
+    "hero.stat2.value": "IA",
+    "hero.stat2.label": "Área favorita",
     "hero.stat3.value": "C1",
     "hero.stat3.label": "Inglês",
 
@@ -153,18 +158,20 @@ export const translations: Record<Language, Dict> = {
       "Estágio de 300h na Croácia em 2026. Desempenho técnico e capacidade de adaptação reconhecidos pela escola.",
     "why.item2.title": "Inglês C1",
     "why.item2.desc": "Fluente em inglês. Preparado para equipas internacionais e documentação em inglês.",
-    "why.item3.title": "PAP com 20 valores",
+    "why.item3.title": "Inteligência Artificial",
     "why.item3.desc":
-      "Projeto de Aptidão Profissional (GoBar): sistema de reservas escolares com backend, base de dados e interface completa — avaliado com a nota máxima.",
-    "why.item4.title": "Comunicação e iniciativa",
+      "A minha área favorita. Parte do meu estágio e formação passou por IA — quero continuar a aprender e ganhar experiência prática nesta área.",
+    "why.item4.title": "Informática a 360º",
     "why.item4.desc":
-      "Formador voluntário de IA para encarregados de educação. Facilidade em trabalhar em equipa.",
+      "Bases sólidas em hardware, redes e sistemas. Perfil versátil, com maior orientação para software e soluções com IA.",
 
     "about.title": "Sobre mim",
     "about.p1":
-      "Técnico de Gestão e Programação de Sistemas Informáticos (TGPSI), concluído em julho de 2026 com média final de 18 valores. Foco em desenvolvimento web e cibersegurança. Selecionado para estágio Erasmus+ na Croácia pelo desempenho técnico.",
+      "Técnico de Gestão e Programação de Sistemas Informáticos (TGPSI), concluído em julho de 2026. Tenho boa base em informática de forma geral — hardware, redes, sistemas e programação.",
     "about.p2":
-      "Na PAP desenvolvi o GoBar — sistema de reservas escolares em destaque neste portfólio — com avaliação de 20 valores. Procuro a minha primeira oportunidade profissional para aprender e contribuir desde o primeiro dia.",
+      "Sou mais direcionado para software e Inteligência Artificial, que é a área onde quero crescer profissionalmente. Procuro estágio ou primeira oportunidade para desenvolver projetos reais e aprender com uma equipa.",
+    "about.focusTitle": "Foco atual",
+    "about.focusDesc": "Software · IA · Projetos web",
     "about.skillsTitle": "Principais habilidades",
     "about.langTitle": "Idiomas",
     "about.langPt": "Português — Nativo",
@@ -176,7 +183,7 @@ export const translations: Record<Language, Dict> = {
     "education.item1.location": "Split, Croácia",
     "education.item1.period": "Fev 2026 – Abr 2026 (Estágio Agendado)",
     "education.item1.desc":
-      "Selecionado para estágio profissional de 300 horas em contexto europeu. Foco em adaptação cultural e prática de Inglês em ambiente técnico.",
+      "Estágio profissional de 300 horas em contexto europeu, com forte componente técnica e exposição a ambientes de inovação, incluindo trabalho ligado a tecnologia e IA.",
     "education.item2.title": "Curso Técnico de Gestão e Programação de Sistemas Informáticos",
     "education.item2.location": "Escola Secundária Damião de Goes",
     "education.item2.period": "2022 – Jul 2026 (Concluído)",
@@ -184,17 +191,17 @@ export const translations: Record<Language, Dict> = {
       "Curso concluído com média final de 18 valores. Especialização em programação, redes, bases de dados e desenvolvimento de software.",
 
     "experience.title": "Experiência e projetos práticos",
-    "experience.subtitle": "Voluntariado e trabalho de desenvolvimento.",
-    "experience.item1.title": "Formador de Tecnologia e IA",
-    "experience.item1.context": "Voluntariado Escolar",
+    "experience.subtitle": "Estágio, voluntariado e desenvolvimento.",
+    "experience.item1.title": "Estágio e formação em IA",
+    "experience.item1.context": "Voluntariado escolar · Tecnologia",
     "experience.item1.period": "2025",
     "experience.item1.desc":
-      "Ministrou sessões de formação sobre Inteligência Artificial para encarregados de educação. Desenvolvimento de capacidades de comunicação e liderança.",
-    "experience.item2.title": "PAP — GoBar",
-    "experience.item2.context": "Projeto de Aptidão Profissional · 20 valores",
-    "experience.item2.period": "2025 – 2026",
+      "Experiência prática centrada em Inteligência Artificial: formação para encarregados de educação, explicação de conceitos e ferramentas. Foi uma das experiências que reforçou o meu interesse em IA.",
+    "experience.item2.title": "Projetos de Desenvolvimento de Software",
+    "experience.item2.context": "GoBar · AulaBot · Portfólio",
+    "experience.item2.period": "2023 – Presente",
     "experience.item2.desc":
-      "Desenvolvimento completo do GoBar, plataforma de reservas escolares: backend em PHP, base de dados SQL, gestão de utilizadores e interface web responsiva. Projeto apresentado e avaliado com a nota máxima.",
+      "Desenvolvimento de aplicações web com PHP, SQL, APIs e bases de dados — incluindo o GoBar e o AulaBot — com foco em funcionalidade, segurança e experiência de utilizador.",
 
     "projects.title": "Portfólio",
     "projects.intro":
@@ -205,11 +212,11 @@ export const translations: Record<Language, Dict> = {
     "projects.papBadge": "PAP · 20 valores",
     "projects.main1.title": "GoBar — Plataforma escolar",
     "projects.main1.desc":
-      "GoBar — plataforma de reservas escolares e o meu Projeto de Aptidão Profissional, avaliado com 20 valores. Backend, base de dados e interface completa, não só páginas estáticas.",
+      "Plataforma digital de reservas escolares: backend, base de dados e interface completa — aplicação web real, não só páginas estáticas.",
     "projects.main1.f1": "Gestão de reservas com lógica de negócio no servidor (PHP + SQL)",
     "projects.main1.f2": "Perfis e permissões adaptados ao contexto escolar",
     "projects.main1.f3": "Interface responsiva pensada para alunos e staff no dia a dia",
-    "projects.main1.f4": "Aplicação web real, desenvolvida e defendida como PAP",
+    "projects.main1.f4": "Aplicação web completa, pronta para evoluir com novas funcionalidades",
     "projects.main1.f5": "Demonstra trabalho full stack além de HTML/CSS isolado",
     "projects.main2.title": "AulaBot — Assistente de estudo",
     "projects.main2.desc":
@@ -244,7 +251,7 @@ export const translations: Record<Language, Dict> = {
 
     "contact.title": "Vamos trabalhar juntos?",
     "contact.subtitle":
-      "Estou disponível para estágio ou primeira oportunidade júnior. Envie uma mensagem ou use o telefone e email abaixo.",
+      "Disponível para estágio ou primeira oportunidade em software e IA. Envie uma mensagem ou use o telefone e email abaixo.",
     "contact.form.name": "Nome",
     "contact.form.email": "E-mail",
     "contact.form.message": "Mensagem",
@@ -262,7 +269,7 @@ export const translations: Record<Language, Dict> = {
     "contact.direct": "Contacte-me diretamente:",
     "contact.networks": "Redes (atualiza quando tiveres):",
 
-    "footer.availability": "TGPSI concluído (média 18). Disponível para estágio e primeira oportunidade júnior.",
+    "footer.availability": "Disponível para estágio e primeira oportunidade júnior em software e IA.",
   },
   en: {
     "nav.why": "Why me?",
@@ -275,17 +282,19 @@ export const translations: Record<Language, Dict> = {
 
     "hero.badgeErasmus": "Erasmus+ 2026",
     "hero.badgeEnglish": "English C1",
-    "hero.badgeTgpsi": "TGPSI completed · Grade 18",
+    "hero.badgeTgpsi": "TGPSI completed",
+    "hero.badgeAi": "AI focus",
     "hero.hello": "Hi, I'm",
     "hero.role": "Junior Developer",
-    "hero.pitch": "Looking for an internship or my first role in web development and cybersecurity.",
+    "hero.pitch":
+      "IT background across hardware, networking, and software — with a stronger focus on development and Artificial Intelligence, where I want to grow.",
     "hero.ctaContact": "Contact me",
     "hero.ctaCv": "View CV (PDF)",
     "hero.scrollLabel": "What sets me apart",
     "hero.stat1.value": "18",
     "hero.stat1.label": "TGPSI average",
-    "hero.stat2.value": "20",
-    "hero.stat2.label": "GoBar final project",
+    "hero.stat2.value": "AI",
+    "hero.stat2.label": "Favorite area",
     "hero.stat3.value": "C1",
     "hero.stat3.label": "English",
 
@@ -296,18 +305,20 @@ export const translations: Record<Language, Dict> = {
       "300-hour internship in Croatia in 2026. Strong technical performance and adaptability recognized by my school.",
     "why.item2.title": "English C1",
     "why.item2.desc": "Fluent in English. Ready for international teams and English documentation.",
-    "why.item3.title": "Final project — top grade",
+    "why.item3.title": "Artificial Intelligence",
     "why.item3.desc":
-      "Professional Aptitude Project (GoBar): school reservation system with backend, database, and full interface — graded 20/20.",
-    "why.item4.title": "Communication & initiative",
+      "My favorite area. Part of my internship and training has been AI-focused — I want to keep learning and gaining hands-on experience.",
+    "why.item4.title": "Well-rounded IT profile",
     "why.item4.desc":
-      "Volunteer AI instructor for parents/guardians. Comfortable working in teams and explaining clearly.",
+      "Solid foundations in hardware, networking, and systems. Versatile profile, with a stronger orientation toward software and AI solutions.",
 
     "about.title": "About me",
     "about.p1":
-      "Information Systems Management & Programming (TGPSI) graduate, completed in July 2026 with a final average of 18/20. Focus on web development and cybersecurity. Selected for an Erasmus+ internship in Croatia due to strong technical performance.",
+      "Information Systems Management & Programming (TGPSI) graduate, completed in July 2026. Strong general IT foundation — hardware, networking, systems, and programming.",
     "about.p2":
-      "For my final project I built GoBar — the school reservation system featured in this portfolio — graded 20/20. I'm looking for my first professional opportunity to learn fast and contribute from day one.",
+      "I'm more oriented toward software and Artificial Intelligence, where I want to grow professionally. I'm looking for an internship or first role to build real projects and learn with a team.",
+    "about.focusTitle": "Current focus",
+    "about.focusDesc": "Software · AI · Web projects",
     "about.skillsTitle": "Key skills",
     "about.langTitle": "Languages",
     "about.langPt": "Portuguese — Native",
@@ -319,7 +330,7 @@ export const translations: Record<Language, Dict> = {
     "education.item1.location": "Split, Croatia",
     "education.item1.period": "Feb 2026 – Apr 2026 (Scheduled internship)",
     "education.item1.desc":
-      "Selected for a 300-hour professional internship in a European context. Focus on cultural adaptation and technical English practice.",
+      "300-hour professional internship in a European context, with strong technical exposure — including work linked to technology and AI.",
     "education.item2.title": "Technical Course in Information Systems Management & Programming",
     "education.item2.location": "Escola Secundária Damião de Goes",
     "education.item2.period": "2022 – Jul 2026 (Completed)",
@@ -327,17 +338,17 @@ export const translations: Record<Language, Dict> = {
       "Completed with a final average of 18/20. Specialization in programming, networks, databases, and software development.",
 
     "experience.title": "Experience & hands-on projects",
-    "experience.subtitle": "Volunteering and development work.",
-    "experience.item1.title": "Technology & AI Instructor",
-    "experience.item1.context": "School volunteering",
+    "experience.subtitle": "Internship, volunteering, and development.",
+    "experience.item1.title": "Internship & AI training",
+    "experience.item1.context": "School volunteering · Technology",
     "experience.item1.period": "2025",
     "experience.item1.desc":
-      "Delivered AI training sessions for parents/guardians. Strengthened communication and leadership skills.",
-    "experience.item2.title": "Final Project — GoBar",
-    "experience.item2.context": "Professional Aptitude Project · 20/20",
-    "experience.item2.period": "2025 – 2026",
+      "Hands-on experience centered on Artificial Intelligence: training sessions for parents/guardians, explaining concepts and tools. One of the experiences that reinforced my interest in AI.",
+    "experience.item2.title": "Software Development Projects",
+    "experience.item2.context": "GoBar · AulaBot · Portfolio",
+    "experience.item2.period": "2023 – Present",
     "experience.item2.desc":
-      "End-to-end development of GoBar, a school reservation platform: PHP backend, SQL database, user management, and responsive web interface. Presented and graded with the top mark.",
+      "Web applications with PHP, SQL, APIs, and databases — including GoBar and AulaBot — focused on functionality, security, and user experience.",
 
     "projects.title": "Portfolio",
     "projects.intro":
@@ -348,11 +359,11 @@ export const translations: Record<Language, Dict> = {
     "projects.papBadge": "Final project · 20/20",
     "projects.main1.title": "GoBar — School platform",
     "projects.main1.desc":
-      "GoBar — school reservation platform and my Professional Aptitude Project, graded 20/20. Full backend, database, and interface, not just static pages.",
+      "School reservation platform: backend, database, and full interface — a real web application, not just static pages.",
     "projects.main1.f1": "Reservation management with server-side business logic (PHP + SQL)",
     "projects.main1.f2": "Roles and permissions tailored to a school environment",
     "projects.main1.f3": "Responsive interface designed for students and staff day to day",
-    "projects.main1.f4": "Real web application developed and defended as my final project",
+    "projects.main1.f4": "Complete web application ready to grow with new features",
     "projects.main1.f5": "Shows full-stack work beyond standalone HTML/CSS",
     "projects.main2.title": "AulaBot — Study assistant",
     "projects.main2.desc":
@@ -405,7 +416,7 @@ export const translations: Record<Language, Dict> = {
     "contact.direct": "Reach me directly:",
     "contact.networks": "Links (update when ready):",
 
-    "footer.availability": "TGPSI completed (average 18). Open to an internship and my first junior role.",
+    "footer.availability": "Open to an internship and my first junior role in software and AI.",
   },
 };
 

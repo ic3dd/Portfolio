@@ -34,7 +34,7 @@ export function HeroSection() {
 
         <div className="hero-anim mb-4 flex flex-wrap items-center justify-center gap-2">
           <span className="rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold text-accent dark:bg-accent/20">
-            {t("hero.badgeTgpsi")}
+            {t("hero.badgeAi")}
           </span>
           <span className="rounded-full bg-accent/15 px-3 py-1 font-body text-xs font-semibold text-accent dark:bg-accent/20">
             {t("hero.badgeErasmus")}
@@ -57,10 +57,10 @@ export function HeroSection() {
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className={`stat-card ${stat.highlight ? "border-emerald-500/40 ring-1 ring-emerald-500/20" : ""}`}
+              className={`stat-card ${stat.highlight ? "border-accent/40 ring-1 ring-accent/20" : ""}`}
             >
               <p
-                className={`font-heading text-2xl font-bold sm:text-3xl ${stat.highlight ? "text-emerald-600 dark:text-emerald-400" : "text-accent"}`}
+                className={`font-heading text-2xl font-bold sm:text-3xl ${stat.highlight ? "text-accent" : "text-accent"}`}
               >
                 {stat.value}
               </p>
