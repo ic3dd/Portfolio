@@ -3,10 +3,11 @@
 import Image from "next/image";
 import type { TranslationKey } from "@/lib/i18n";
 import type { Project } from "@/types";
+import { ProjectCover } from "@/components/home/ProjectCover";
+import { isPlaceholderId, type PlaceholderId } from "@/components/home/projectTypes";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { withBasePath } from "@/lib/basePath";
-
-type PlaceholderId = "main1" | "main2" | "demo1" | "demo2";
 
 const placeholderProjects: Project[] = [
   {
@@ -14,7 +15,7 @@ const placeholderProjects: Project[] = [
     title: "GoBar",
     slug: "gobar",
     description: null,
-    cover_image_url: withBasePath("/images/gobar.png"),
+    cover_image_url: null,
     technologies: ["PHP", "SQL", "JavaScript", "HTML", "CSS"],
     github_url: null,
     live_url: "https://aluno19355.damiaodegoes.pt/",
@@ -29,7 +30,7 @@ const placeholderProjects: Project[] = [
     title: "AulaBot",
     slug: "aulabot",
     description: null,
-    cover_image_url: withBasePath("/images/aulabot.png"),
+    cover_image_url: null,
     technologies: ["PHP", "SQL", "JavaScript", "APIs", "HTML", "CSS"],
     github_url: null,
     live_url: "https://aulabot.hstn.me/",
@@ -116,10 +117,6 @@ const PLACEHOLDER_SECTIONS: { heading: TranslationKey; ids: PlaceholderId[] }[] 
   { heading: "projects.demoHeading", ids: ["demo1", "demo2"] },
 ];
 
-function isPlaceholderId(id: string): id is PlaceholderId {
-  return id === "main1" || id === "main2" || id === "demo1" || id === "demo2";
-}
-
 function CheckIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -162,38 +159,27 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
     return (
       <li
         key={project.id}
-        className="card-hover group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-sm"
+        className={`card-hover group flex h-full flex-col overflow-hidden rounded-2xl border bg-surface shadow-sm ${
+          papBadge ? "border-emerald-500/25" : "border-border"
+        }`}
       >
-        <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="relative aspect-video w-full overflow-hidden">
           {coverSrc ? (
             <>
               <Image
                 src={coverSrc}
                 alt={mappedTitle}
                 fill
-                className="object-cover object-top transition-opacity duration-200 group-hover:opacity-95"
+                className="object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             </>
           ) : (
-            <div className="flex h-full flex-col items-center justify-center gap-2 px-4 text-center font-body text-slate-400">
-              <svg
-                className="h-12 w-12 opacity-50"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                aria-hidden
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
-                />
-              </svg>
-              <span className="text-xs text-slate-500">{t("projects.noImage")}</span>
-            </div>
+            <ProjectCover
+              projectId={isPlaceholderId(pid) ? pid : undefined}
+              title={mappedTitle}
+            />
           )}
         </div>
         <div className="flex flex-1 flex-col p-4 sm:p-5">
@@ -281,10 +267,9 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
   }
 
   return (
-    <section id="projetos" className="scroll-mt-20 border-t border-border px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+    <section id="projetos" className="section-shell bg-surface">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-heading text-2xl font-bold text-primary sm:text-3xl">{t("projects.title")}</h2>
-        <p className="mt-2 max-w-3xl font-body text-text-muted">{t("projects.intro")}</p>
+        <SectionHeader title={t("projects.title")} subtitle={t("projects.intro")} />
 
         {isPlaceholder ? (
           <div className="mt-10 space-y-14">
@@ -295,9 +280,13 @@ export function ProjectsSection({ projects }: { projects?: Project[] | null }) {
 
               return (
                 <div key={section.heading}>
-                  <h3 className="font-heading text-lg font-semibold text-primary sm:text-xl">
-                    {t(section.heading)}
-                  </h3>
+                  <div className="flex items-center gap-3">
+                    <div className="h-px flex-1 bg-border" aria-hidden />
+                    <h3 className="shrink-0 font-heading text-sm font-semibold uppercase tracking-wider text-text-muted">
+                      {t(section.heading)}
+                    </h3>
+                    <div className="h-px flex-1 bg-border" aria-hidden />
+                  </div>
                   <ul className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2">
                     {sectionProjects.map((project) => renderCard(project))}
                   </ul>

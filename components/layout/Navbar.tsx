@@ -25,9 +25,12 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-heading text-lg font-semibold text-primary no-underline transition-colors hover:text-accent"
+          className="group flex items-center gap-2 font-heading text-lg font-semibold text-primary no-underline transition-colors hover:text-accent"
         >
-          Santiago Esteves
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/15 text-sm font-bold text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+            SE
+          </span>
+          <span className="hidden sm:inline">Santiago Esteves</span>
         </Link>
 
         <div className="hidden items-center md:flex">

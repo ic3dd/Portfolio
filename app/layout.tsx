@@ -26,15 +26,17 @@ export const metadata: Metadata = {
     template: "%s | Santiago Esteves",
   },
   description:
-    "Portfólio de Santiago Esteves — Gestão e Programação de Sistemas Informáticos, desenvolvimento web, PHP, SQL e cibersegurança. Estágio Erasmus+ na Croácia.",
+    "Portfólio de Santiago Esteves — TGPSI concluído (média 18), PAP GoBar com 20 valores, desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio Erasmus+ e primeira oportunidade júnior.",
   keywords: [
     "Santiago Esteves",
     "programador júnior",
+    "TGPSI",
     "desenvolvimento web",
     "PHP",
     "SQL",
     "portfólio",
     "Portugal",
+    "estágio",
   ],
   authors: [{ name: "Santiago Esteves" }],
   openGraph: {
@@ -44,13 +46,15 @@ export const metadata: Metadata = {
     siteName: "Santiago Esteves",
     title: "Santiago Esteves | Programador Júnior",
     description:
-      "Portfólio — desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+      "TGPSI concluído (média 18) · PAP GoBar (20) · Desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "Santiago Esteves — Portfólio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Santiago Esteves | Programador Júnior",
     description:
-      "Portfólio — desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+      "TGPSI concluído (média 18) · PAP GoBar (20) · Desenvolvimento web, PHP, SQL e cibersegurança. Disponível para estágio e primeira oportunidade júnior.",
+    images: ["/og-image.svg"],
   },
   robots: { index: true, follow: true },
 };
@@ -61,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="pt-PT" suppressHydrationWarning>
       <body className={`${headingFont.variable} ${bodyFont.variable}`}>
         <LanguageProvider>
           <ThemeProvider>{children}</ThemeProvider>

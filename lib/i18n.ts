@@ -17,6 +17,12 @@ export type TranslationKey =
   | "hero.ctaContact"
   | "hero.ctaCv"
   | "hero.scrollLabel"
+  | "hero.stat1.value"
+  | "hero.stat1.label"
+  | "hero.stat2.value"
+  | "hero.stat2.label"
+  | "hero.stat3.value"
+  | "hero.stat3.label"
   | "why.title"
   | "why.subtitle"
   | "why.item1.title"
@@ -133,6 +139,12 @@ export const translations: Record<Language, Dict> = {
     "hero.ctaContact": "Fala comigo",
     "hero.ctaCv": "Ver CV em PDF",
     "hero.scrollLabel": "O que me destaca",
+    "hero.stat1.value": "18",
+    "hero.stat1.label": "Média TGPSI",
+    "hero.stat2.value": "20",
+    "hero.stat2.label": "PAP GoBar",
+    "hero.stat3.value": "C1",
+    "hero.stat3.label": "Inglês",
 
     "why.title": "Porquê eu?",
     "why.subtitle": "Diferenciais que posso trazer à sua equipa.",
@@ -270,6 +282,12 @@ export const translations: Record<Language, Dict> = {
     "hero.ctaContact": "Contact me",
     "hero.ctaCv": "View CV (PDF)",
     "hero.scrollLabel": "What sets me apart",
+    "hero.stat1.value": "18",
+    "hero.stat1.label": "TGPSI average",
+    "hero.stat2.value": "20",
+    "hero.stat2.label": "GoBar final project",
+    "hero.stat3.value": "C1",
+    "hero.stat3.label": "English",
 
     "why.title": "Why me?",
     "why.subtitle": "What I can bring to your team.",

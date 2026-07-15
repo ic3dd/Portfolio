@@ -24,8 +24,7 @@ function getInitialLanguage(): Language {
   if (typeof window === "undefined") return "pt";
   const stored = localStorage.getItem("lang");
   if (stored && isLanguage(stored)) return stored;
-  const browser = (navigator.language || "").toLowerCase();
-  return browser.startsWith("en") ? "en" : "pt";
+  return "pt";
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -36,13 +35,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const initial = getInitialLanguage();
     setMounted(true);
     setLangState(initial);
-    document.documentElement.lang = initial === "en" ? "en" : "pt-BR";
+    document.documentElement.lang = initial === "en" ? "en" : "pt-PT";
   }, []);
 
   const setLang = useCallback((newLang: Language) => {
     setLangState(newLang);
     localStorage.setItem("lang", newLang);
-    document.documentElement.lang = newLang === "en" ? "en" : "pt-BR";
+    document.documentElement.lang = newLang === "en" ? "en" : "pt-PT";
   }, []);
 
   const toggleLang = useCallback(() => {

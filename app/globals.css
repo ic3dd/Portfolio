@@ -119,4 +119,27 @@
     @apply border-accent;
     background-color: color-mix(in srgb, var(--accent) 12%, var(--bg-primary));
   }
+
+  .section-shell {
+    @apply scroll-mt-20 border-t border-border px-4 py-16 sm:px-6 lg:px-8 lg:py-20;
+  }
+
+  .stat-card {
+    @apply rounded-2xl border border-border bg-surface px-5 py-4 text-center backdrop-blur-sm;
+  }
+
+  .timeline-item {
+    @apply relative rounded-xl border border-border bg-surface p-5 sm:p-6;
+  }
+
+  .timeline-item::before {
+    content: "";
+    @apply absolute left-0 top-6 h-[calc(100%-3rem)] w-0.5 -translate-x-px bg-accent/30;
+  }
+
+  @media (min-width: 640px) {
+    .timeline-list > li:not(:last-child) .timeline-item::before {
+      display: block;
+    }
+  }
 }
