@@ -24,25 +24,63 @@ function MailIcon() {
 
 export function ContactSection() {
   const { t } = useLanguage();
-  const [opened, setOpened] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorKey, setErrorKey] = useState<"generic" | "config" | "send">("generic");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+    setStatus("sending");
+    setErrorKey("generic");
+
     const fd = new FormData(form);
     const name = String(fd.get("name") ?? "").trim();
     const email = String(fd.get("email") ?? "").trim();
     const message = String(fd.get("message") ?? "").trim();
+    const botcheck = String(fd.get("botcheck") ?? "").trim();
 
-    const subject = encodeURIComponent(`[Portfólio] Mensagem de ${name}`);
-    const body = encodeURIComponent(
-      `${message}\n\n---\nNome: ${name}\nEmail: ${email}`
-    );
+    try {
+      if (!web3Key) {
+        setErrorKey("config");
+        setStatus("error");
+        return;
+      }
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setOpened(true);
-    form.reset();
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: web3Key,
+          subject: `[Portfólio] Mensagem de ${name}`,
+          name,
+          email,
+          message,
+          botcheck,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+        return;
+      }
+
+      setErrorKey("send");
+      setStatus("error");
+    } catch {
+      setErrorKey("generic");
+      setStatus("error");
+    }
   }
+
+  const errorMessage =
+    errorKey === "config"
+      ? t("contact.form.errorConfig")
+      : errorKey === "send"
+        ? t("contact.form.errorSend")
+        : t("contact.form.error");
 
   return (
     <section id="contato" className="section-shell bg-surface">
@@ -51,7 +89,15 @@ export function ContactSection() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-2xl border border-border bg-primary p-5 sm:p-6">
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="relative space-y-4">
+              <input
+                type="text"
+                name="botcheck"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+                className="absolute -left-[9999px] h-0 w-0 opacity-0"
+              />
               <div>
                 <label htmlFor="name" className="block font-body text-sm font-medium text-primary">
                   {t("contact.form.name")}
@@ -93,13 +139,19 @@ export function ContactSection() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-xl bg-accent px-4 py-3 font-heading text-sm font-semibold text-white shadow-md transition-colors hover:bg-accent-hover hover:shadow-lg sm:w-auto"
+                disabled={status === "sending"}
+                className="w-full rounded-xl bg-accent px-4 py-3 font-heading text-sm font-semibold text-white shadow-md transition-colors hover:bg-accent-hover hover:shadow-lg disabled:opacity-70 sm:w-auto"
               >
-                {t("contact.form.send")}
+                {status === "sending"
+                  ? t("contact.form.sending")
+                  : status === "success"
+                    ? t("contact.form.sent")
+                    : t("contact.form.send")}
               </button>
-              {opened && (
+              {status === "success" && (
                 <p className="text-sm text-green-600 dark:text-green-400">{t("contact.form.success")}</p>
               )}
+              {status === "error" && <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>}
             </form>
           </div>
 
