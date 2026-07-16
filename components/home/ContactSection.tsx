@@ -27,7 +27,9 @@ export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorKey, setErrorKey] = useState<"generic" | "config" | "send">("generic");
 
-  const web3Key = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  // Web3Forms access keys are public (client-side). Env overrides when set.
+  const web3Key =
+    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "3d9ba168-6a95-49f3-a11b-43e763556205";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
